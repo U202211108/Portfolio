@@ -1,15 +1,11 @@
 
 import {
-    ArrowRight,
     ArrowUpRight,
     BookOpen,
     ClipboardCheck,
-    MessageCircle,
     ShieldCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
-import { getWhatsAppUrl } from "../../utils/contact";
 import "../../styles/Services.css";
 
 const services = [
@@ -52,9 +48,6 @@ const services = [
 ];
 
 export default function Services() {
-    const generalMessage =
-        "Hola, quisiera conocer qué tipo de orientación profesional ofrece Emilio Chávarri y consultar su disponibilidad.";
-
     return (
         <section className="section section-services" id="servicios">
             <div className="section-shell services-container">

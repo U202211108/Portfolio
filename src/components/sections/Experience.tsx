@@ -1,8 +1,5 @@
 
 import {
-    ArrowDownLeft,
-    ArrowDownRight,
-    ArrowUpRight,
     BriefcaseBusiness,
     CheckCircle2,
     ClipboardList,
