@@ -1,0 +1,1311 @@
+
+/* =========================================================
+   HERO — EMILIO CHÁVARRI JIMÉNEZ
+   Diseño corporativo · Retrato cuadrado · Responsive
+   ========================================================= */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 82% 40%,
+            rgb(210 228 247 / 60%) 0%,
+            transparent 38%
+        ),
+        linear-gradient(120deg, #f8fafc 0%, #eef3f9 100%);
+}
+
+.hero,
+.hero *,
+.hero *::before,
+.hero *::after {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   DISTRIBUCIÓN PRINCIPAL
+   ========================================================= */
+
+.hero-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+    align-items: center;
+    gap: clamp(36px, 5vw, 68px);
+    width: min(1200px, calc(100% - 80px));
+    min-height: 650px;
+    margin-inline: auto;
+    padding-block: 52px 60px;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 650px;
+    min-width: 0;
+    animation: hero-copy-enter 650ms ease both;
+}
+
+/* =========================================================
+   PRESENTACIÓN Y TÍTULO
+   ========================================================= */
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #3978b2;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    line-height: 1.7;
+}
+
+.hero-eyebrow-line {
+    width: 26px;
+    height: 2px;
+    flex: 0 0 26px;
+    border-radius: 3px;
+    background: #3978b2;
+}
+
+.hero h1 {
+    max-width: 650px;
+    margin: 23px 0 21px;
+    color: #142b44;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2.65rem, 4vw, 3.65rem);
+    font-weight: 800;
+    line-height: 1.13;
+    letter-spacing: -0.052em;
+    text-wrap: balance;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.hero-title-accent {
+    color: #3978b2;
+}
+
+.hero-description {
+    max-width: 555px;
+    margin: 0;
+    color: #53677c;
+    font-size: 0.94rem;
+    line-height: 1.85;
+}
+
+.hero-description-secondary {
+    margin-top: 12px;
+    color: #718196;
+    font-size: 0.87rem;
+    line-height: 1.85;
+}
+
+/* =========================================================
+   ACCIÓN PRINCIPAL
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.hero-button {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-size: 0.82rem;
+    font-weight: 750;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        transform 220ms ease,
+        background-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.hero-button-primary {
+    color: #fff;
+    background: #173957;
+    box-shadow: 0 7px 18px rgb(23 57 87 / 12%);
+}
+
+.hero-button-primary:hover {
+    transform: translateY(-2px);
+    background: #285f91;
+    box-shadow: 0 12px 25px rgb(23 57 87 / 17%);
+}
+
+.hero-button-primary svg {
+    flex: 0 0 auto;
+    transition: transform 220ms ease;
+}
+
+.hero-button-primary:hover svg {
+    transform: translateX(4px);
+}
+
+.hero-button:focus-visible,
+.hero-scroll-link:focus-visible {
+    outline: 3px solid #80b8e8;
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   EXPERIENCIA PROFESIONAL
+   ========================================================= */
+
+.hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 30px;
+    padding-top: 21px;
+    border-top: 1px solid #dce5ee;
+}
+
+.hero-proof-icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    place-items: center;
+    border: 1px solid #d6e5f4;
+    border-radius: 12px;
+    color: #356fa9;
+    background: #edf5fd;
+}
+
+.hero-proof-copy {
+    display: grid;
+    min-width: 0;
+    gap: 5px;
+}
+
+.hero-proof-copy strong {
+    color: #1c3854;
+    font-size: 0.91rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.hero-proof-copy span {
+    max-width: 390px;
+    color: #748499;
+    font-size: 0.77rem;
+    line-height: 1.65;
+}
+
+/* =========================================================
+   ENLACE A LA SIGUIENTE SECCIÓN
+   ========================================================= */
+
+.hero-scroll-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    color: #64788e;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 200ms ease;
+}
+
+.hero-scroll-link:hover {
+    color: #285f91;
+}
+
+.hero-scroll-icon {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    flex: 0 0 29px;
+    place-items: center;
+    border: 1px solid #d6e2ed;
+    border-radius: 50%;
+    color: #3978b2;
+    background: rgb(255 255 255 / 85%);
+    transition:
+        transform 200ms ease,
+        background-color 200ms ease;
+}
+
+.hero-scroll-link:hover .hero-scroll-icon {
+    transform: translateY(3px);
+    background: #fff;
+}
+
+/* =========================================================
+   COLUMNA VISUAL Y CÍRCULOS DECORATIVOS
+   ========================================================= */
+
+.hero-visual {
+    position: relative;
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    min-height: 510px;
+    place-items: center;
+    align-self: center;
+    isolation: isolate;
+}
+
+.hero-decoration {
+    position: absolute;
+    z-index: -1;
+    aspect-ratio: 1;
+    border: 1px solid rgb(75 125 175 / 20%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-decoration-one {
+    width: min(445px, 100%);
+    animation: hero-decoration-breathe 8s ease-in-out infinite;
+}
+
+.hero-decoration-two {
+    width: min(365px, 82%);
+    border-style: dashed;
+    border-color: rgb(75 125 175 / 25%);
+    animation: hero-decoration-breathe 8s ease-in-out infinite reverse;
+}
+
+/* =========================================================
+   RETRATO CUADRADO
+   ========================================================= */
+
+.hero-portrait {
+    position: relative;
+    z-index: 1;
+    width: min(390px, 86%);
+    aspect-ratio: 1 / 1;
+    padding: 8px;
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 95%);
+    border-radius: 23px;
+    background: #fff;
+    box-shadow:
+        0 28px 75px rgb(18 43 70 / 16%),
+        0 5px 18px rgb(18 43 70 / 5%);
+    animation: hero-portrait-enter 750ms 100ms ease both;
+    transition:
+        transform 350ms ease,
+        box-shadow 350ms ease;
+}
+
+.hero-portrait:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 35px 80px rgb(18 43 70 / 19%),
+        0 8px 24px rgb(18 43 70 / 7%);
+}
+
+.hero-portrait-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #e6edf4;
+}
+
+.hero-portrait-image > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    transition: transform 600ms ease;
+}
+
+.hero-portrait:hover .hero-portrait-image > img {
+    transform: scale(1.025);
+}
+
+/* Identificación del profesional */
+
+.hero-portrait-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    gap: 5px;
+    padding: 48px 18px 17px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(10 29 48 / 20%) 28%,
+        rgb(10 29 48 / 93%) 100%
+    );
+}
+
+.hero-portrait-overlay > span {
+    color: #c7e0fa;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.hero-portrait-overlay > strong {
+    color: #fff;
+    font-size: 0.96rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.hero-portrait-overlay > p {
+    margin: 0;
+    color: #e0eaf4;
+    font-size: 0.74rem;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   TARJETA FLOTANTE
+   ========================================================= */
+
+.hero-floating-card {
+    position: absolute;
+    right: -7px;
+    bottom: 23px;
+    z-index: 2;
+    display: flex;
+    max-width: 232px;
+    align-items: center;
+    gap: 11px;
+    padding: 13px 14px;
+    border: 1px solid #e0e8f0;
+    border-radius: 13px;
+    background: rgb(255 255 255 / 97%);
+    box-shadow: 0 15px 35px rgb(22 47 73 / 12%);
+    animation: hero-card-float 5s ease-in-out infinite;
+}
+
+.hero-floating-icon {
+    display: grid;
+    width: 41px;
+    height: 41px;
+    flex: 0 0 41px;
+    place-items: center;
+    border: 1px solid #d9e8f7;
+    border-radius: 11px;
+    color: #356fa9;
+    background: #edf5fd;
+}
+
+.hero-floating-copy {
+    display: grid;
+    min-width: 0;
+    gap: 4px;
+}
+
+.hero-floating-copy strong {
+    color: #1e3852;
+    font-size: 0.76rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.hero-floating-copy span {
+    color: #75869a;
+    font-size: 0.66rem;
+    line-height: 1.5;
+}
+
+/* Etiqueta inferior de la composición */
+
+.hero-visual-label {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #71859a;
+    font-size: 0.53rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-align: right;
+}
+
+.hero-visual-label > span {
+    width: 17px;
+    height: 1px;
+    flex: 0 0 17px;
+    background: #91aac3;
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+@keyframes hero-copy-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hero-portrait-enter {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes hero-card-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes hero-decoration-breathe {
+    0%,
+    100% {
+        opacity: 0.65;
+        scale: 1;
+    }
+
+    50% {
+        opacity: 1;
+        scale: 1.02;
+    }
+}
+
+/* =========================================================
+   PORTÁTILES Y TABLETAS
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .hero-shell {
+        grid-template-columns: minmax(0, 1fr) minmax(285px, 0.85fr);
+        gap: 28px;
+        width: calc(100% - 48px);
+        min-height: 600px;
+        padding-block: 45px 52px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.4rem, 4.1vw, 3.2rem);
+    }
+
+    .hero-description {
+        font-size: 0.89rem;
+    }
+
+    .hero-description-secondary {
+        font-size: 0.84rem;
+    }
+
+    .hero-visual {
+        min-height: 435px;
+    }
+
+    .hero-portrait {
+        width: min(350px, 92%);
+    }
+
+    .hero-floating-card {
+        right: -4px;
+        bottom: 18px;
+        max-width: 215px;
+        padding: 10px;
+    }
+
+    .hero-visual-label {
+        font-size: 0.47rem;
+    }
+}
+
+/* =========================================================
+   MÓVILES
+   ========================================================= */
+
+@media (max-width: 680px) {
+    .hero-shell {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 27px;
+        width: calc(100% - 36px);
+        min-height: 0;
+        padding-block: 40px 44px;
+    }
+
+    .hero-copy {
+        max-width: none;
+    }
+
+    .hero-eyebrow {
+        gap: 8px;
+        font-size: 0.59rem;
+        letter-spacing: 0.06em;
+    }
+
+    .hero-eyebrow-line {
+        width: 20px;
+        flex-basis: 20px;
+    }
+
+    .hero h1 {
+        max-width: 560px;
+        margin: 20px 0 17px;
+        font-size: clamp(2.3rem, 8.5vw, 3.05rem);
+        line-height: 1.14;
+    }
+
+    .hero-description {
+        font-size: 0.89rem;
+        line-height: 1.85;
+    }
+
+    .hero-description-secondary {
+        margin-top: 10px;
+        font-size: 0.83rem;
+    }
+
+    .hero-actions {
+        margin-top: 22px;
+    }
+
+    .hero-button {
+        width: 100%;
+        min-height: 49px;
+    }
+
+    .hero-proof {
+        margin-top: 24px;
+        padding-top: 18px;
+    }
+
+    .hero-visual {
+        min-height: 400px;
+        margin-top: 2px;
+    }
+
+    .hero-decoration-one {
+        width: min(375px, 100%);
+    }
+
+    .hero-decoration-two {
+        width: min(315px, 84%);
+    }
+
+    .hero-portrait {
+        width: min(340px, 84%);
+    }
+
+    .hero-floating-card {
+        right: 0;
+        bottom: 13px;
+        max-width: 220px;
+    }
+
+    .hero-visual-label {
+        right: 0;
+        bottom: -12px;
+        font-size: 0.45rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .hero-shell {
+        width: calc(100% - 30px);
+        padding-block: 34px 38px;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.53rem;
+        letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+        font-size: 2.15rem;
+    }
+
+    .hero-visual {
+        min-height: 350px;
+    }
+
+    .hero-portrait {
+        width: 84%;
+        padding: 6px;
+        border-radius: 18px;
+    }
+
+    .hero-portrait-image {
+        border-radius: 12px;
+    }
+
+    .hero-portrait-overlay {
+        gap: 4px;
+        padding: 37px 12px 12px;
+    }
+
+    .hero-portrait-overlay > span {
+        font-size: 0.51rem;
+    }
+
+    .hero-portrait-overlay > strong {
+        font-size: 0.84rem;
+    }
+
+    .hero-portrait-overlay > p {
+        font-size: 0.68rem;
+    }
+
+    .hero-floating-card {
+        right: -2px;
+        bottom: 7px;
+        max-width: 198px;
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .hero-floating-icon {
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
+    }
+
+    .hero-floating-copy strong {
+        font-size: 0.69rem;
+    }
+
+    .hero-floating-copy span {
+        font-size: 0.61rem;
+    }
+
+    .hero-visual-label {
+        font-size: 0.41rem;
+    }
+}
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-copy,
+    .hero-portrait,
+    .hero-decoration,
+    .hero-floating-card {
+        animation: none !important;
+    }
+
+    .hero *,
+    .hero *::before,
+    .hero *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+
+/* =========================================================
+   CORRECCIÓN FINAL DEL RETRATO DEL HERO
+   Mantiene el diseño general y evita las superposiciones.
+   ========================================================= */
+
+.hero .hero-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-width: 0;
+    min-height: 0;
+    padding: 24px 0 8px;
+}
+
+/* Marco cuadrado, elegante y centrado */
+.hero .hero-portrait {
+    position: relative;
+    width: min(390px, 100%);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    flex: 0 0 auto;
+    padding: 7px;
+    overflow: hidden;
+    border: 1px solid #ffffff;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow:
+        0 24px 65px rgb(20 43 73 / 15%),
+        0 4px 14px rgb(20 43 73 / 5%);
+}
+
+/* El contenedor recorta la captura original */
+.hero .hero-portrait-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 17px;
+    background: #e9edf2;
+}
+
+/*
+ * IMPORTANTE:
+ * La imagen original es una captura vertical.
+ * object-fit: cover permite recortar las bandas superiores
+ * e inferiores y mostrar la zona central de la fotografía.
+ */
+.hero .hero-portrait-image > img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center center;
+    transform: none;
+    transition: none;
+}
+
+/* Evita que el zoom anterior vuelva a activarse */
+.hero .hero-portrait:hover .hero-portrait-image > img {
+    transform: none;
+}
+
+/* Identificación discreta, dentro del borde inferior */
+.hero .hero-portrait-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    gap: 5px;
+    padding: 42px 18px 16px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(10 29 48 / 35%) 40%,
+        rgb(10 29 48 / 90%) 100%
+    );
+}
+
+.hero .hero-portrait-overlay > span {
+    color: #c7e0fa;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.hero .hero-portrait-overlay > strong {
+    color: #ffffff;
+    font-size: 0.94rem;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.hero .hero-portrait-overlay > p {
+    margin: 0;
+    color: #e0eaf4;
+    font-size: 0.73rem;
+    line-height: 1.5;
+}
+
+/* Orientación virtual debajo de la fotografía */
+.hero .hero-floating-card {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    display: flex;
+    width: min(390px, 100%);
+    max-width: 390px;
+    min-height: 76px;
+    align-items: center;
+    gap: 13px;
+    padding: 14px 16px;
+    border: 1px solid #e0e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgb(22 47 73 / 7%);
+    animation: none;
+}
+
+.hero .hero-floating-icon {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+    place-items: center;
+    border: 1px solid #d9e8f7;
+    border-radius: 12px;
+    color: #356fa9;
+    background: #edf5fd;
+}
+
+.hero .hero-floating-copy {
+    display: grid;
+    min-width: 0;
+    gap: 4px;
+}
+
+.hero .hero-floating-copy strong {
+    color: #1e3852;
+    font-size: 0.8rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.hero .hero-floating-copy span {
+    color: #75869a;
+    font-size: 0.7rem;
+    line-height: 1.55;
+}
+
+/* Texto inferior: vuelve al flujo normal */
+.hero .hero-visual-label {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 100%;
+    margin: 0;
+    color: #71859a;
+    font-size: 0.52rem;
+    text-align: center;
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 1050px) {
+    .hero .hero-visual {
+        gap: 16px;
+    }
+
+    .hero .hero-portrait,
+    .hero .hero-floating-card {
+        width: min(350px, 100%);
+        max-width: 350px;
+    }
+}
+
+/* Ajustes para móvil */
+@media (max-width: 680px) {
+    .hero .hero-visual {
+        width: 100%;
+        min-height: 0;
+        padding: 14px 0 4px;
+        gap: 15px;
+    }
+
+    .hero .hero-portrait,
+    .hero .hero-floating-card {
+        width: min(340px, 100%);
+        max-width: 340px;
+    }
+
+    .hero .hero-decoration-one {
+        width: min(375px, 100%);
+    }
+
+    .hero .hero-decoration-two {
+        width: min(315px, 84%);
+    }
+
+    .hero .hero-visual-label {
+        font-size: 0.47rem;
+        letter-spacing: 0.04em;
+    }
+}
+
+@media (max-width: 390px) {
+    .hero .hero-visual {
+        gap: 13px;
+    }
+
+    .hero .hero-portrait,
+    .hero .hero-floating-card {
+        width: 100%;
+    }
+
+    .hero .hero-portrait {
+        padding: 6px;
+        border-radius: 19px;
+    }
+
+    .hero .hero-portrait-image {
+        border-radius: 13px;
+    }
+
+    .hero .hero-portrait-overlay {
+        padding: 34px 12px 12px;
+    }
+
+    .hero .hero-portrait-overlay > strong {
+        font-size: 0.84rem;
+    }
+
+    .hero .hero-floating-card {
+        min-height: 68px;
+        padding: 11px;
+    }
+
+    .hero .hero-visual-label {
+        font-size: 0.43rem;
+    }
+}
+
+
+/* =========================================================
+   HERO — PULIDO VISUAL PREMIUM
+   Mantiene la fotografía y la estructura actuales.
+   ========================================================= */
+
+.hero {
+    background:
+        radial-gradient(
+            ellipse at 78% 43%,
+            rgb(208 226 246 / 48%) 0%,
+            transparent 37%
+        ),
+        linear-gradient(135deg, #f8fafc 0%, #edf3f9 100%);
+}
+
+/* Mejor equilibrio entre el texto y la fotografía */
+
+.hero .hero-shell {
+    gap: clamp(38px, 5.5vw, 76px);
+}
+
+.hero .hero-copy {
+    max-width: 650px;
+}
+
+.hero .hero-eyebrow {
+    margin-bottom: 4px;
+}
+
+.hero .hero h1 {
+    text-wrap: balance;
+}
+
+/* Retrato: acabado editorial y marco más delicado */
+
+.hero .hero-portrait {
+    width: min(400px, 100%);
+    padding: 7px;
+    border: 1px solid rgb(255 255 255 / 95%);
+    border-radius: 25px;
+    box-shadow:
+        0 30px 75px rgb(28 53 80 / 13%),
+        0 8px 22px rgb(28 53 80 / 5%),
+        0 0 0 1px rgb(91 127 164 / 5%);
+    transition:
+        box-shadow 300ms ease,
+        transform 300ms ease;
+}
+
+.hero .hero-portrait:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 36px 85px rgb(28 53 80 / 17%),
+        0 10px 26px rgb(28 53 80 / 6%);
+}
+
+.hero .hero-portrait-image {
+    border-radius: 18px;
+    background: #e9edf2;
+}
+
+/* Ajuste fino del encuadre: no aplicar zoom adicional */
+
+.hero .hero-portrait-image > img {
+    object-position: center 45%;
+}
+
+/* Nombre más legible, degradado más suave */
+
+.hero .hero-portrait-overlay {
+    gap: 6px;
+    padding: 56px 19px 19px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgb(12 30 48 / 10%) 24%,
+        rgb(12 30 48 / 76%) 72%,
+        rgb(12 30 48 / 94%) 100%
+    );
+}
+
+.hero .hero-portrait-overlay > span {
+    font-size: 0.57rem;
+    letter-spacing: 0.13em;
+}
+
+.hero .hero-portrait-overlay > strong {
+    font-size: 1rem;
+    letter-spacing: -0.015em;
+}
+
+.hero .hero-portrait-overlay > p {
+    font-size: 0.74rem;
+}
+
+/* Círculos decorativos más discretos */
+
+.hero .hero-decoration-one {
+    border-color: rgb(75 125 175 / 17%);
+}
+
+.hero .hero-decoration-two {
+    border-color: rgb(75 125 175 / 21%);
+}
+
+/* Tarjeta de orientación: limpia, separada y proporcionada */
+
+.hero .hero-floating-card {
+    width: min(400px, 100%);
+    max-width: 400px;
+    min-height: 82px;
+    gap: 15px;
+    padding: 16px 18px;
+    border: 1px solid rgb(218 229 240 / 95%);
+    border-radius: 16px;
+    background: rgb(255 255 255 / 94%);
+    box-shadow:
+        0 12px 32px rgb(25 52 80 / 6%),
+        0 2px 7px rgb(25 52 80 / 3%);
+    transition:
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        transform 220ms ease;
+}
+
+.hero .hero-floating-card:hover {
+    transform: translateY(-2px);
+    border-color: #cbdced;
+    box-shadow: 0 16px 36px rgb(25 52 80 / 9%);
+}
+
+.hero .hero-floating-icon {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+    border-radius: 13px;
+}
+
+.hero .hero-floating-copy {
+    gap: 5px;
+}
+
+.hero .hero-floating-copy strong {
+    font-size: 0.83rem;
+    letter-spacing: -0.01em;
+}
+
+.hero .hero-floating-copy span {
+    font-size: 0.72rem;
+    line-height: 1.6;
+}
+
+/* Etiqueta inferior más discreta */
+
+.hero .hero-visual-label {
+    gap: 9px;
+    color: #71849a;
+    font-size: 0.51rem;
+    letter-spacing: 0.085em;
+}
+
+.hero .hero-visual-label > span {
+    width: 20px;
+    flex-basis: 20px;
+    background: #9bb2ca;
+}
+
+/* Entrada suave al cargar la página */
+
+@keyframes hero-premium-enter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero .hero-floating-card {
+    animation: hero-premium-enter 650ms 120ms ease both;
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+    .hero .hero-portrait,
+    .hero .hero-floating-card {
+        width: min(360px, 100%);
+        max-width: 360px;
+    }
+}
+
+/* Móvil */
+
+@media (max-width: 680px) {
+    .hero .hero-shell {
+        gap: 30px;
+    }
+
+    .hero .hero-visual {
+        gap: 15px;
+    }
+
+    .hero .hero-portrait,
+    .hero .hero-floating-card {
+        width: min(350px, 100%);
+        max-width: 350px;
+    }
+
+    .hero .hero-portrait-overlay {
+        padding: 43px 15px 15px;
+    }
+
+    .hero .hero-portrait-overlay > strong {
+        font-size: 0.91rem;
+    }
+
+    .hero .hero-floating-card {
+        min-height: 76px;
+        padding: 13px 15px;
+    }
+
+    .hero .hero-visual-label {
+        font-size: 0.45rem;
+        letter-spacing: 0.045em;
+    }
+}
+
+/* Respetar las preferencias de accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero .hero-floating-card {
+        animation: none !important;
+    }
+
+    .hero .hero-portrait,
+    .hero .hero-floating-card {
+        transition: none !important;
+    }
+}
+
+
+/* Ocultar la franja negra superior de la fotografía */
+.hero .hero-portrait-image {
+    overflow: hidden;
+    background: #e9edf2;
+}
+
+.hero .hero-portrait-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    transform: scale(1.12);
+    transform-origin: center 45%;
+}
+
+/* Mantener el encuadre al pasar el cursor */
+.hero .hero-portrait:hover .hero-portrait-image > img {
+    transform: scale(1.12);
+}
+
+@media (max-width: 680px) {
+    .hero .hero-portrait-image > img {
+        transform: scale(1.12);
+    }
+
+    .hero .hero-portrait:hover .hero-portrait-image > img {
+        transform: scale(1.12);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero .hero-portrait-image > img {
+        transition: none;
+    }
+}
+
+
+/* Etiqueta inferior del retrato: mayor tamaño y legibilidad */
+.hero .hero-visual-label {
+    gap: 10px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.075em;
+    line-height: 1.6;
+    color: #526b84;
+    text-align: center;
+}
+
+.hero .hero-visual-label > span {
+    width: 25px;
+    flex-basis: 25px;
+    height: 2px;
+    background: #7399bf;
+}
+
+/* Ajuste para tabletas */
+@media (max-width: 1050px) {
+    .hero .hero-visual-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 680px) {
+    .hero .hero-visual-label {
+        gap: 7px;
+        font-size: 0.59rem;
+        letter-spacing: 0.045em;
+    }
+
+    .hero .hero-visual-label > span {
+        width: 17px;
+        flex-basis: 17px;
+    }
+}
+
+@media (max-width: 390px) {
+    .hero .hero-visual-label {
+        font-size: 0.51rem;
+        letter-spacing: 0.025em;
+    }
+}

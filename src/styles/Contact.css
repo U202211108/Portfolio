@@ -1,0 +1,544 @@
+
+/* ==========================================
+   CONTACTO — DISEÑO PROFESIONAL
+   ========================================== */
+
+.section-contact {
+    position: relative;
+    overflow: hidden;
+    padding: 54px 0;
+    background: #eaf0f7;
+}
+
+.section-contact .section-shell {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-panel {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 66px);
+
+    overflow: hidden;
+    padding: clamp(30px, 5vw, 58px);
+
+    border: 1px solid rgb(160 193 227 / 18%);
+    border-radius: 22px;
+
+    color: #f4f8ff;
+    background:
+        radial-gradient(
+            circle at 95% 5%,
+            rgb(64 122 177 / 24%),
+            transparent 34%
+        ),
+        linear-gradient(130deg, #142e4b 0%, #0c1d32 65%, #102944 100%);
+
+    box-shadow: 0 22px 55px rgb(15 38 64 / 13%);
+}
+
+.contact-copy {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+}
+
+.contact-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 20px;
+
+    color: #a8c9ed;
+    font-size: 0.69rem;
+    font-weight: 750;
+    letter-spacing: 0.15em;
+}
+
+.contact-eyebrow-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+    border-radius: 2px;
+    background: #83bfff;
+}
+
+.contact-copy h2 {
+    max-width: 650px;
+    margin: 0;
+
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2rem, 3.7vw, 3.15rem);
+    font-weight: 750;
+    line-height: 1.13;
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+}
+
+.contact-copy h2 span {
+    color: #8fc5ff;
+}
+
+.contact-description {
+    max-width: 570px;
+    margin: 20px 0 0;
+
+    color: #c3d3e5;
+    font-size: 0.94rem;
+    line-height: 1.85;
+}
+
+.contact-trust-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 530px;
+    margin-top: 22px;
+
+    color: #d4e3f2;
+    font-size: 0.83rem;
+    line-height: 1.7;
+}
+
+.contact-trust-icon {
+    display: grid;
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    place-items: center;
+
+    border: 1px solid rgb(143 197 255 / 22%);
+    border-radius: 9px;
+
+    color: #9dceff;
+    background: rgb(143 197 255 / 9%);
+}
+
+.contact-trust-note > span:last-child {
+    padding-top: 5px;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 11px;
+    margin-top: 28px;
+}
+
+.contact-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 16px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    font-size: 0.84rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+
+    transition:
+        transform 220ms ease,
+        background-color 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+}
+
+.contact-button-primary {
+    color: #10253c;
+    background: #b8dcff;
+    box-shadow: 0 7px 18px rgb(0 0 0 / 13%);
+}
+
+.contact-button-primary:hover {
+    background: #d0e8ff;
+    box-shadow: 0 11px 24px rgb(0 0 0 / 19%);
+}
+
+.contact-button-primary svg:last-child {
+    transition: transform 200ms ease;
+}
+
+.contact-button-primary:hover svg:last-child {
+    transform: translateX(3px);
+}
+
+.contact-button-secondary {
+    border-color: rgb(201 222 245 / 27%);
+    color: #eff6ff;
+    background: rgb(255 255 255 / 5%);
+}
+
+.contact-button-secondary:hover {
+    border-color: rgb(201 222 245 / 55%);
+    background: rgb(255 255 255 / 10%);
+}
+
+.contact-response-hint {
+    margin: 15px 0 0;
+    color: #91a9c2;
+    font-size: 0.75rem;
+    line-height: 1.7;
+}
+
+/* Tarjeta de perfil */
+
+.contact-profile-card {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+    padding: 25px;
+
+    border: 1px solid rgb(190 215 242 / 20%);
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            150deg,
+            rgb(255 255 255 / 9%),
+            rgb(255 255 255 / 3%)
+        );
+
+    box-shadow:
+        0 20px 45px rgb(0 0 0 / 13%),
+        inset 0 1px 0 rgb(255 255 255 / 5%);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    animation: contact-card-enter 650ms ease both;
+    transition:
+        transform 250ms ease,
+        border-color 250ms ease,
+        box-shadow 250ms ease;
+}
+
+.contact-profile-card:hover {
+    transform: translateY(-4px);
+    border-color: rgb(143 197 255 / 42%);
+    box-shadow:
+        0 25px 50px rgb(0 0 0 / 18%),
+        inset 0 1px 0 rgb(255 255 255 / 7%);
+}
+
+.contact-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.contact-avatar {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    place-items: center;
+
+    border: 1px solid rgb(143 197 255 / 35%);
+    border-radius: 14px;
+
+    color: #c7e4ff;
+    background: linear-gradient(145deg, #2c537a, #1b3858);
+}
+
+.contact-profile-status {
+    padding: 7px 9px;
+    border: 1px solid rgb(143 197 255 / 22%);
+    border-radius: 6px;
+
+    color: #b5d7fa;
+    background: rgb(143 197 255 / 7%);
+
+    font-size: 0.58rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+.contact-card-overline {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #91bde8;
+    font-size: 0.65rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+}
+
+.contact-profile-card h3 {
+    margin: 0;
+
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    font-weight: 750;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.contact-card-description {
+    margin: 13px 0 0;
+
+    color: #c0d1e4;
+    font-size: 0.84rem;
+    line-height: 1.85;
+}
+
+.contact-card-divider {
+    height: 1px;
+    margin: 22px 0 17px;
+    background: rgb(206 225 246 / 15%);
+}
+
+.contact-email-link {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 11px;
+
+    padding: 9px 0;
+    border-radius: 8px;
+
+    color: #f0f6ff;
+    text-decoration: none;
+
+    transition: color 200ms ease;
+}
+
+.contact-email-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    place-items: center;
+
+    border: 1px solid rgb(143 197 255 / 19%);
+    border-radius: 10px;
+
+    color: #a7d2ff;
+    background: rgb(143 197 255 / 8%);
+}
+
+.contact-email-copy {
+    display: grid;
+    min-width: 0;
+    flex: 1;
+    gap: 5px;
+}
+
+.contact-email-copy small {
+    color: #8fa9c5;
+    font-size: 0.59rem;
+    font-weight: 750;
+    letter-spacing: 0.09em;
+}
+
+.contact-email-copy strong {
+    color: #eff6ff;
+    font-size: 0.76rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.contact-email-arrow {
+    flex: 0 0 auto;
+    color: #91bde8;
+    transition: transform 200ms ease;
+}
+
+.contact-email-link:hover {
+    color: #ffffff;
+}
+
+.contact-email-link:hover .contact-email-arrow {
+    transform: translate(3px, -3px);
+}
+
+.contact-card-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 17px;
+    padding-top: 15px;
+    border-top: 1px solid rgb(206 225 246 / 12%);
+
+    color: #a9bfd7;
+    font-size: 0.71rem;
+    line-height: 1.65;
+}
+
+.contact-card-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: #8bc3ff;
+    box-shadow: 0 0 0 4px rgb(139 195 255 / 10%);
+}
+
+/* Decoración sutil */
+
+.contact-decoration {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    border: 1px solid rgb(143 197 255 / 8%);
+    border-radius: 50%;
+}
+
+.contact-decoration-one {
+    top: -160px;
+    right: 20%;
+    width: 360px;
+    height: 360px;
+}
+
+.contact-decoration-two {
+    right: 12%;
+    bottom: -230px;
+    width: 420px;
+    height: 420px;
+    border-color: rgb(143 197 255 / 6%);
+}
+
+/* Entrada de la tarjeta */
+
+@keyframes contact-card-enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .section-contact {
+        padding: 42px 0;
+    }
+
+    .contact-panel {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 34px;
+        border-radius: 18px;
+    }
+
+    .contact-copy h2 {
+        max-width: 680px;
+        font-size: clamp(2rem, 5vw, 2.7rem);
+    }
+
+    .contact-profile-card {
+        width: 100%;
+    }
+}
+
+/* Móvil */
+
+@media (max-width: 600px) {
+    .section-contact {
+        padding: 30px 0;
+    }
+
+    .contact-panel {
+        gap: 24px;
+        padding: 24px 19px;
+        border-radius: 15px;
+    }
+
+    .contact-eyebrow {
+        margin-bottom: 16px;
+        font-size: 0.63rem;
+    }
+
+    .contact-copy h2 {
+        font-size: clamp(1.8rem, 8vw, 2.25rem);
+        line-height: 1.16;
+    }
+
+    .contact-description {
+        margin-top: 15px;
+        font-size: 0.87rem;
+        line-height: 1.8;
+    }
+
+    .contact-trust-note {
+        gap: 10px;
+        margin-top: 17px;
+        font-size: 0.79rem;
+    }
+
+    .contact-actions {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .contact-button {
+        width: 100%;
+        min-height: 47px;
+        padding: 11px 12px;
+        font-size: 0.79rem;
+    }
+
+    .contact-response-hint {
+        font-size: 0.72rem;
+    }
+
+    .contact-profile-card {
+        padding: 20px;
+    }
+
+    .contact-card-top {
+        margin-bottom: 21px;
+    }
+
+    .contact-profile-status {
+        font-size: 0.54rem;
+    }
+
+    .contact-card-description {
+        font-size: 0.81rem;
+    }
+
+    .contact-email-copy strong {
+        font-size: 0.71rem;
+    }
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-profile-card {
+        animation: none;
+        transition: none;
+    }
+
+    .contact-button,
+    .contact-email-arrow {
+        transition: none;
+    }
+}

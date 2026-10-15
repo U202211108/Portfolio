@@ -1,0 +1,292 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #182a40;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   min-height: 100vh;
+  --navy: #142b49;
+  --navy-deep: #0d1d32;
+  --blue: #3979b9;
+  --blue-light: #eaf2fb;
+  --text: #24364b;
+  --muted: #68788b;
+  --line: #e5eaf0;
+  --surface: #f6f8fb;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+body,
+button,
+a {
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #80b8f1;
+  outline-offset: 4px;
+}
+
+::selection {
+  color: #ffffff;
+  background: #3979b9;
+}
+
+img,
+svg {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+::selection {
+  color: white;
+  background: var(--blue);
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  outline-offset: 4px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--blue);
+}
+
+img {
+  max-width: 100%;
+}
+
+section[id] {
+    scroll-margin-top: 88px;
+}
+
+/* Jerarquía tipográfica consistente */
+.section-shell {
+    width: min(1120px, calc(100% - 64px));
+    margin-inline: auto;
+}
+
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 26px;
+}
+
+.section-heading h2 {
+    margin-top: 12px;
+    margin-bottom: 13px;
+    font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+}
+
+.section-heading p {
+    margin-top: 0;
+    line-height: 1.75;
+}
+
+.section-kicker {
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+}
+
+/* Alternancia de fondos para evitar una página completamente blanca */
+.section-about {
+    background: #edf2f8;
+}
+
+.section-experience {
+    background: #eaf0f7;
+}
+
+.section-specialties {
+    background: #f5f7fa;
+}
+
+.section-services {
+    background: #10243d;
+}
+
+.section-contact {
+    background: #edf2f8;
+}
+
+/* Evita que las imágenes generen desbordamientos */
+img,
+video,
+svg {
+    max-width: 100%;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    touch-action: manipulation;
+}
+
+/* Botones coherentes */
+.button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease,
+        background 200ms ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button:focus-visible {
+    outline: 3px solid #83bfff;
+    outline-offset: 4px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    html {
+        scroll-padding-top: 76px;
+    }
+
+    section[id] {
+        scroll-margin-top: 76px;
+    }
+
+    .section-shell {
+        width: calc(100% - 48px);
+    }
+
+    .section {
+        padding-top: 46px;
+        padding-bottom: 46px;
+    }
+
+    .section-heading {
+        margin-bottom: 22px;
+    }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    section[id] {
+        scroll-margin-top: 70px;
+    }
+
+    .section-shell {
+        width: calc(100% - 36px);
+    }
+
+    .section {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+    .section-heading {
+        margin-bottom: 19px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(1.65rem, 7.5vw, 2.1rem);
+    }
+
+    .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

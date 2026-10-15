@@ -1,0 +1,571 @@
+
+/* ==========================================
+   SPECIALTIES — PRESENTACIÓN PROFESIONAL
+   ========================================== */
+
+.section-specialties {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(76px, 9vw, 116px) 0;
+    background:
+        radial-gradient(
+            ellipse at 0% 8%,
+            rgb(66 115 170 / 5%),
+            transparent 38%
+        ),
+        var(--surface);
+}
+
+.specialties-shell {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- CABECERA ---------- */
+
+.centered-heading.specialties-heading {
+    max-width: 760px;
+    margin: 0 auto clamp(38px, 5vw, 58px);
+    text-align: center;
+}
+
+.specialties-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 19px;
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.specialties-kicker-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 0 4px rgb(57 111 169 / 10%);
+}
+
+.specialties-heading h2 {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(31px, 4vw, 47px);
+    font-weight: 750;
+    line-height: 1.17;
+    letter-spacing: -0.045em;
+    color: var(--navy);
+    text-wrap: balance;
+}
+
+.specialties-heading h2 .text-accent {
+    color: var(--blue);
+}
+
+.specialties-heading > p {
+    max-width: 620px;
+    margin: 19px auto 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    text-wrap: pretty;
+}
+
+.specialties-heading-note {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 22px;
+    padding: 10px 14px;
+    border: 1px solid rgb(52 96 143 / 12%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 76%);
+    color: #49627c;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.specialties-heading-note svg {
+    flex-shrink: 0;
+    color: var(--blue);
+}
+
+/* ---------- CUADRÍCULA ---------- */
+
+.specialty-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* ---------- TARJETAS ---------- */
+
+.specialty-card {
+    --card-accent: var(--blue);
+
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    min-width: 0;
+    min-height: 350px;
+    flex-direction: column;
+    overflow: hidden;
+    padding: clamp(23px, 3vw, 32px);
+    border: 1px solid rgb(32 61 91 / 10%);
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #fcfdff 100%
+    );
+    box-shadow:
+        0 3px 8px rgb(17 39 66 / 2%),
+        0 14px 35px rgb(17 39 66 / 3%);
+    animation: specialty-enter 650ms both;
+    transition:
+        transform 280ms ease,
+        border-color 280ms ease,
+        box-shadow 280ms ease;
+}
+
+.specialty-card::before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    content: "";
+    background: linear-gradient(
+        90deg,
+        var(--card-accent),
+        rgb(104 157 211 / 38%),
+        transparent
+    );
+    transform: scaleX(0.15);
+    transform-origin: left;
+    transition: transform 350ms ease;
+}
+
+.specialty-card-glow {
+    position: absolute;
+    z-index: -1;
+    top: -100px;
+    right: -100px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgb(68 123 180 / 7%),
+        transparent 70%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 350ms ease;
+}
+
+.specialty-card:hover {
+    transform: translateY(-6px);
+    border-color: rgb(60 111 165 / 24%);
+    box-shadow:
+        0 8px 18px rgb(17 39 66 / 4%),
+        0 24px 48px rgb(17 39 66 / 8%);
+}
+
+.specialty-card:hover::before {
+    transform: scaleX(1);
+}
+
+.specialty-card:hover .specialty-card-glow {
+    opacity: 1;
+}
+
+/* ---------- CABECERA DE CADA TARJETA ---------- */
+
+.specialty-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.specialty-number {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: var(--navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+}
+
+.specialty-number > span {
+    color: #8999ad;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.specialty-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    place-items: center;
+    border: 1px solid rgb(61 111 164 / 12%);
+    border-radius: 15px;
+    background: linear-gradient(
+        145deg,
+        #edf4fc,
+        #f5f8fd
+    );
+    color: var(--blue);
+    transition:
+        color 280ms ease,
+        background 280ms ease,
+        border-color 280ms ease,
+        transform 280ms ease;
+}
+
+.specialty-card:hover .specialty-icon {
+    transform: translateY(-2px) rotate(-3deg);
+    border-color: transparent;
+    background: var(--navy);
+    color: #ffffff;
+}
+
+/* ---------- TEXTO ---------- */
+
+.specialty-card-content {
+    margin-top: 23px;
+}
+
+.specialty-card h3 {
+    margin: 0;
+    color: var(--navy);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(18px, 2vw, 21px);
+    font-weight: 750;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    transition: color 220ms ease;
+}
+
+.specialty-card:hover h3 {
+    color: var(--blue);
+}
+
+.specialty-card-content > p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* ---------- ETIQUETAS ---------- */
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.tag-list span {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #e9eef5;
+    border-radius: 7px;
+    background: #f6f8fb;
+    color: #50657d;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition:
+        color 200ms ease,
+        border-color 200ms ease,
+        background 200ms ease;
+}
+
+.specialty-card:hover .tag-list span {
+    border-color: #e0eaf5;
+    background: #f1f6fc;
+}
+
+/* ---------- ENLACE DE DETALLE ---------- */
+
+.specialty-card-footer {
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+.specialty-link {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 17px;
+    border-top: 1px solid #e9eef4;
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        color 220ms ease,
+        border-color 220ms ease;
+}
+
+.specialty-link:hover {
+    border-color: rgb(56 108 163 / 35%);
+    color: var(--blue);
+}
+
+.specialty-link-icon {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    border: 1px solid #e6edf5;
+    border-radius: 10px;
+    background: #f7f9fc;
+    transition:
+        color 220ms ease,
+        background 220ms ease,
+        border-color 220ms ease,
+        transform 220ms ease;
+}
+
+.specialty-link:hover .specialty-link-icon {
+    transform: translate(2px, -2px);
+    border-color: var(--navy);
+    background: var(--navy);
+    color: #ffffff;
+}
+
+.specialty-link:focus-visible,
+.specialties-contact-link:focus-visible {
+    border-radius: 5px;
+    outline: 2px solid var(--blue);
+    outline-offset: 5px;
+}
+
+.specialty-link-disabled {
+    color: #7c8998;
+    cursor: default;
+}
+
+/* ---------- CIERRE DE LA SECCIÓN ---------- */
+
+.specialties-bottom {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 27px;
+    padding: 21px 24px;
+    border: 1px solid rgb(32 61 91 / 9%);
+    border-radius: 15px;
+    background: rgb(255 255 255 / 75%);
+}
+
+.specialties-bottom-mark {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+    place-items: center;
+    border-radius: 12px;
+    background: #edf4fb;
+    color: var(--blue);
+}
+
+.specialties-bottom > p {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+}
+
+.specialties-bottom > p strong {
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.specialties-bottom > p span {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.specialties-contact-link {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 0 10px 12px;
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 200ms ease;
+}
+
+.specialties-contact-link:hover {
+    color: var(--blue);
+}
+
+.specialties-contact-link svg {
+    transition: transform 200ms ease;
+}
+
+.specialties-contact-link:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* ---------- ANIMACIONES ---------- */
+
+@keyframes specialty-enter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+    .specialty-grid {
+        gap: 16px;
+    }
+
+    .specialty-card {
+        min-height: 365px;
+        padding: 24px;
+    }
+
+    .specialties-bottom {
+        align-items: flex-start;
+    }
+}
+
+/* ---------- MÓVIL ---------- */
+
+@media (max-width: 640px) {
+    .section-specialties {
+        padding: 70px 0;
+    }
+
+    .centered-heading.specialties-heading {
+        margin-bottom: 34px;
+        text-align: left;
+    }
+
+    .specialties-heading h2 {
+        font-size: clamp(29px, 8vw, 38px);
+        line-height: 1.2;
+    }
+
+    .specialties-heading > p {
+        margin-top: 15px;
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .specialties-heading-note {
+        justify-content: flex-start;
+        max-width: 100%;
+        border-radius: 11px;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .specialty-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .specialty-card {
+        min-height: 0;
+        padding: 23px;
+        border-radius: 15px;
+    }
+
+    .specialty-card-content {
+        margin-top: 20px;
+    }
+
+    .specialty-card h3 {
+        font-size: 19px;
+    }
+
+    .specialty-card-content > p {
+        font-size: 12px;
+    }
+
+    .tag-list {
+        margin-top: 18px;
+    }
+
+    .specialties-bottom {
+        flex-wrap: wrap;
+        gap: 13px;
+        padding: 19px;
+    }
+
+    .specialties-bottom > p {
+        flex-basis: calc(100% - 58px);
+    }
+
+    .specialties-contact-link {
+        justify-content: center;
+        width: 100%;
+        margin-top: 3px;
+        padding: 13px;
+        border: 1px solid #e4ebf3;
+        border-radius: 9px;
+    }
+}
+
+/* ---------- ACCESIBILIDAD ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .specialty-card {
+        animation: none;
+        transition: none;
+    }
+
+    .specialty-card::before,
+    .specialty-card-glow,
+    .specialty-icon,
+    .specialty-card h3,
+    .tag-list span,
+    .specialty-link,
+    .specialty-link-icon,
+    .specialties-contact-link,
+    .specialties-contact-link svg {
+        transition: none;
+    }
+
+    .specialty-card:hover {
+        transform: none;
+    }
+}

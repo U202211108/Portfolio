@@ -1,0 +1,1821 @@
+
+/* ================================================
+   PÁGINAS DE ORIENTACIÓN PROFESIONAL
+   ================================================ */
+
+.orientation-detail {
+    --orientation-navy: #102640;
+    --orientation-deep: #0b1b2d;
+    --orientation-blue: #397bb8;
+    --orientation-text: #20364d;
+    --orientation-muted: #64778b;
+    --orientation-line: #dfe7ef;
+
+    color: var(--orientation-text);
+    background: #ffffff;
+}
+
+.orientation-shell {
+    width: min(1120px, calc(100% - 64px));
+    margin-inline: auto;
+}
+
+/* Hero */
+
+.orientation-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 25px 0 0;
+    color: #ffffff;
+    background:
+        radial-gradient(
+            ellipse at 85% 20%,
+            rgb(70 124 177 / 20%),
+            transparent 40%
+        ),
+        linear-gradient(135deg, #102640, #0b1b2d 78%);
+}
+
+.orientation-hero::after {
+    position: absolute;
+    top: -150px;
+    right: -120px;
+    width: 430px;
+    height: 430px;
+    border: 1px solid rgb(171 206 240 / 9%);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.orientation-back-link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #c2d6eb;
+    font-size: 0.79rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 200ms ease;
+}
+
+.orientation-back-link:hover {
+    color: #ffffff;
+}
+
+.orientation-back-link svg {
+    transition: transform 200ms ease;
+}
+
+.orientation-back-link:hover svg {
+    transform: translateX(-3px);
+}
+
+.orientation-hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.7fr);
+    align-items: center;
+    gap: clamp(35px, 6vw, 80px);
+    padding-top: 42px;
+    padding-bottom: 39px;
+}
+
+.orientation-hero-copy {
+    min-width: 0;
+    animation: orientation-content-enter 550ms ease both;
+}
+
+.orientation-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #a9c9eb;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    line-height: 1.6;
+}
+
+.orientation-eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #83bfff;
+    box-shadow: 0 0 12px rgb(131 191 255 / 35%);
+}
+
+.orientation-hero-copy h1 {
+    max-width: 720px;
+    margin: 17px 0 16px;
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2.1rem, 4.1vw, 3.55rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
+}
+
+.orientation-hero-copy h1 span {
+    color: #83bfff;
+}
+
+.orientation-hero-summary {
+    max-width: 670px;
+    margin: 0;
+    color: #c1d0df;
+    font-size: 0.94rem;
+    line-height: 1.85;
+}
+
+.orientation-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 19px;
+    margin-top: 25px;
+}
+
+.orientation-button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 0.81rem;
+    font-weight: 750;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        transform 220ms ease,
+        background-color 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.orientation-button:hover {
+    transform: translateY(-2px);
+}
+
+.orientation-button-primary {
+    border-color: #4b88c2;
+    color: #ffffff;
+    background: #326fa8;
+    box-shadow: 0 6px 18px rgb(0 0 0 / 12%);
+}
+
+.orientation-button-primary:hover {
+    border-color: #80b9ec;
+    background: #407fb8;
+    box-shadow: 0 9px 23px rgb(0 0 0 / 17%);
+}
+
+.orientation-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #d1e2f4;
+    font-size: 0.8rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color 200ms ease;
+}
+
+.orientation-text-link:hover {
+    color: #ffffff;
+}
+
+.orientation-text-link svg {
+    transition: transform 200ms ease;
+}
+
+.orientation-text-link:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* Panel lateral */
+
+.orientation-hero-aside {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    padding: 25px 23px 23px;
+    border: 1px solid rgb(181 211 241 / 19%);
+    border-radius: 14px;
+    background: linear-gradient(
+        145deg,
+        rgb(255 255 255 / 8%),
+        rgb(255 255 255 / 3%)
+    );
+    box-shadow: 0 18px 45px rgb(0 0 0 / 10%);
+    animation: orientation-content-enter 650ms 100ms ease both;
+}
+
+.orientation-aside-number {
+    position: absolute;
+    top: -18px;
+    right: 12px;
+    color: rgb(255 255 255 / 5%);
+    font-family: "Manrope", sans-serif;
+    font-size: 7rem;
+    font-weight: 800;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.orientation-aside-icon {
+    position: relative;
+    display: grid;
+    width: 49px;
+    height: 49px;
+    place-items: center;
+    border: 1px solid rgb(131 191 255 / 24%);
+    border-radius: 12px;
+    color: #a9d3fb;
+    background: rgb(131 191 255 / 10%);
+}
+
+.orientation-aside-label {
+    display: block;
+    margin-top: 25px;
+    color: #9ebfe0;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    line-height: 1.6;
+}
+
+.orientation-hero-aside h2 {
+    position: relative;
+    margin: 9px 0 11px;
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 750;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+}
+
+.orientation-hero-aside > p {
+    margin: 0;
+    color: #b5c8dc;
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+.orientation-hero-footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+    min-height: 47px;
+    border-top: 1px solid rgb(177 205 235 / 13%);
+    color: #9cb5cf;
+    font-size: 0.62rem;
+    font-weight: 750;
+    letter-spacing: 0.09em;
+}
+
+.orientation-footer-separator {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #6e9dcc;
+}
+
+/* Encabezados compartidos */
+
+.orientation-section-label {
+    display: block;
+    color: #477fb6;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1.7;
+}
+
+.orientation-section-heading h2 {
+    margin: 11px 0 0;
+    color: #18314b;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.6rem, 2.6vw, 2.15rem);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+}
+
+.orientation-section-heading > p {
+    margin: 12px 0 0;
+    color: var(--orientation-muted);
+    font-size: 0.86rem;
+    line-height: 1.8;
+}
+
+/* Descripción */
+
+.orientation-overview {
+    padding: 49px 0;
+    background: #ffffff;
+}
+
+.orientation-overview-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+    gap: clamp(30px, 6vw, 80px);
+}
+
+.orientation-overview-copy > p {
+    margin: 0;
+    color: #586d82;
+    font-size: 0.88rem;
+    line-height: 1.9;
+}
+
+.orientation-audience {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-top: 21px;
+    padding: 17px;
+    border: 1px solid #dfe9f3;
+    border-radius: 11px;
+    background: #f5f8fc;
+}
+
+.orientation-audience-icon {
+    display: grid;
+    width: 37px;
+    height: 37px;
+    flex: 0 0 37px;
+    place-items: center;
+    border: 1px solid #d6e6f6;
+    border-radius: 9px;
+    color: #3777b2;
+    background: #eaf3fc;
+}
+
+.orientation-audience strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #24415e;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.orientation-audience p {
+    margin: 0;
+    color: #62768b;
+    font-size: 0.78rem;
+    line-height: 1.75;
+}
+
+/* Temas */
+
+.orientation-topics-section {
+    padding: 47px 0 50px;
+    background: #f1f5f9;
+    scroll-margin-top: 85px;
+}
+
+.orientation-topics-heading {
+    max-width: 650px;
+    margin-bottom: 23px;
+}
+
+.orientation-topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 17px;
+}
+
+.orientation-topic-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 21px;
+    border: 1px solid #dce5ef;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgb(22 46 73 / 3%);
+    animation: orientation-content-enter 500ms ease both;
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.orientation-topic-card:hover {
+    transform: translateY(-4px);
+    border-color: #b9d2eb;
+    box-shadow: 0 12px 25px rgb(22 46 73 / 7%);
+}
+
+.orientation-topic-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 21px;
+}
+
+.orientation-topic-top > span {
+    color: #6487aa;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+.orientation-topic-top svg {
+    color: #6b9ac8;
+}
+
+.orientation-topic-card h3 {
+    margin: 0 0 10px;
+    color: #1e3a56;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.98rem;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+.orientation-topic-card > p {
+    margin: 0;
+    color: #62768b;
+    font-size: 0.81rem;
+    line-height: 1.85;
+}
+
+/* Aplicaciones */
+
+.orientation-applications {
+    padding: 48px 0;
+    background: #ffffff;
+}
+
+.orientation-applications-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: start;
+    gap: clamp(30px, 6vw, 80px);
+}
+
+.orientation-benefits-list {
+    display: grid;
+    gap: 13px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.orientation-benefits-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #e2eaf2;
+    border-radius: 10px;
+    background: #f8fafc;
+    transition:
+        transform 200ms ease,
+        border-color 200ms ease;
+}
+
+.orientation-benefits-list li:hover {
+    transform: translateX(3px);
+    border-color: #bfd5ea;
+}
+
+.orientation-benefits-list li > span {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    place-items: center;
+    border-radius: 8px;
+    color: #3678b5;
+    background: #e7f1fb;
+}
+
+.orientation-benefits-list p {
+    margin: 3px 0 0;
+    color: #526981;
+    font-size: 0.82rem;
+    line-height: 1.8;
+}
+
+/* Llamada final */
+
+.orientation-final-cta {
+    padding: 0 0 42px;
+    background: #ffffff;
+}
+
+.orientation-final-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: clamp(23px, 4vw, 36px);
+    border: 1px solid #264d72;
+    border-radius: 14px;
+    color: #ffffff;
+    background:
+        radial-gradient(
+            ellipse at 90% 0%,
+            rgb(94 151 203 / 22%),
+            transparent 45%
+        ),
+        linear-gradient(125deg, #173b5e, #102640);
+    box-shadow: 0 12px 28px rgb(18 43 68 / 10%);
+}
+
+.orientation-final-copy {
+    max-width: 660px;
+}
+
+.orientation-final-copy .orientation-section-label {
+    color: #a8cbed;
+}
+
+.orientation-final-copy h2 {
+    margin: 10px 0;
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.4rem, 2.7vw, 2rem);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+}
+
+.orientation-final-copy > p {
+    margin: 0;
+    color: #c3d5e7;
+    font-size: 0.83rem;
+    line-height: 1.8;
+}
+
+.orientation-button-light {
+    flex: 0 0 auto;
+    border-color: #d8e9f8;
+    color: #183650;
+    background: #ffffff;
+}
+
+.orientation-button-light:hover {
+    border-color: #ffffff;
+    background: #eaf4fd;
+    box-shadow: 0 7px 18px rgb(0 0 0 / 12%);
+}
+
+.orientation-bottom-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 19px;
+    color: #55718d;
+    font-size: 0.78rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color 200ms ease;
+}
+
+.orientation-bottom-back:hover {
+    color: #1e5d94;
+}
+
+/* Página no encontrada */
+
+.orientation-not-found {
+    display: grid;
+    min-height: 55vh;
+    align-items: center;
+    padding: 50px 0;
+    background: #f1f5f9;
+}
+
+.orientation-not-found h1 {
+    max-width: 650px;
+    margin: 14px 0;
+    color: #18314b;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.2;
+}
+
+.orientation-not-found p {
+    max-width: 580px;
+    margin: 0 0 22px;
+    color: #60758a;
+    line-height: 1.8;
+}
+
+/* Animaciones */
+
+@keyframes orientation-content-enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .orientation-shell {
+        width: calc(100% - 48px);
+    }
+
+    .orientation-hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+        gap: 28px;
+        padding-top: 34px;
+    }
+
+    .orientation-hero-copy h1 {
+        font-size: clamp(2rem, 4.5vw, 2.8rem);
+    }
+
+    .orientation-overview-grid,
+    .orientation-applications-grid {
+        gap: 30px;
+    }
+
+    .orientation-topics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .orientation-topic-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .orientation-final-panel {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Móvil */
+
+@media (max-width: 600px) {
+    .orientation-shell {
+        width: calc(100% - 36px);
+    }
+
+    .orientation-hero {
+        padding-top: 20px;
+    }
+
+    .orientation-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        padding-top: 29px;
+        padding-bottom: 26px;
+    }
+
+    .orientation-hero-copy h1 {
+        margin-top: 13px;
+        font-size: clamp(2rem, 9vw, 2.65rem);
+    }
+
+    .orientation-hero-summary {
+        font-size: 0.87rem;
+    }
+
+    .orientation-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 21px;
+    }
+
+    .orientation-hero-actions .orientation-button {
+        width: 100%;
+    }
+
+    .orientation-text-link {
+        justify-content: center;
+        min-height: 35px;
+    }
+
+    .orientation-hero-aside {
+        padding: 19px;
+    }
+
+    .orientation-aside-label {
+        margin-top: 17px;
+    }
+
+    .orientation-hero-footer {
+        gap: 8px;
+        padding: 11px 0;
+        font-size: 0.54rem;
+        line-height: 1.7;
+    }
+
+    .orientation-overview,
+    .orientation-applications {
+        padding: 35px 0;
+    }
+
+    .orientation-overview-grid,
+    .orientation-applications-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+    }
+
+    .orientation-section-heading h2 {
+        font-size: 1.65rem;
+    }
+
+    .orientation-topics-section {
+        padding: 35px 0;
+        scroll-margin-top: 75px;
+    }
+
+    .orientation-topics-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .orientation-topic-card:last-child {
+        grid-column: auto;
+    }
+
+    .orientation-topic-card {
+        padding: 18px;
+    }
+
+    .orientation-topic-top {
+        margin-bottom: 14px;
+    }
+
+    .orientation-final-cta {
+        padding-bottom: 29px;
+    }
+
+    .orientation-final-panel {
+        gap: 19px;
+        padding: 22px 18px;
+        border-radius: 12px;
+    }
+
+    .orientation-final-copy h2 {
+        font-size: 1.5rem;
+    }
+
+    .orientation-button-light {
+        width: 100%;
+    }
+}
+
+/* Móviles estrechos */
+
+@media (max-width: 360px) {
+    .orientation-shell {
+        width: calc(100% - 28px);
+    }
+
+    .orientation-hero-copy h1 {
+        font-size: 1.9rem;
+    }
+
+    .orientation-hero-footer {
+        font-size: 0.49rem;
+    }
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    .orientation-detail *,
+    .orientation-detail *::before,
+    .orientation-detail *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ================================================
+   AJUSTE DE ESPACIADO Y JERARQUÍA VISUAL
+   Añadir al final de OrientationDetailPage.css
+   ================================================ */
+
+/* Contenido más compacto y alineado */
+.orientation-shell {
+    width: min(1080px, calc(100% - 56px));
+}
+
+/* HERO: menos altura y mejor equilibrio */
+.orientation-hero {
+    padding-top: 19px;
+}
+
+.orientation-hero-grid {
+    gap: clamp(28px, 4vw, 54px);
+    padding-top: 29px;
+    padding-bottom: 27px;
+}
+
+.orientation-hero-copy h1 {
+    margin: 12px 0;
+    max-width: 650px;
+    font-size: clamp(2rem, 3.5vw, 3.1rem);
+    line-height: 1.15;
+}
+
+.orientation-hero-summary {
+    max-width: 620px;
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+.orientation-hero-actions {
+    gap: 15px;
+    margin-top: 19px;
+}
+
+.orientation-hero-aside {
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.orientation-aside-label {
+    margin-top: 18px;
+}
+
+.orientation-hero-aside h2 {
+    margin: 8px 0;
+    font-size: 1.13rem;
+}
+
+.orientation-hero-aside > p {
+    font-size: 0.77rem;
+    line-height: 1.7;
+}
+
+.orientation-hero-footer {
+    min-height: 39px;
+    gap: 10px;
+}
+
+/* Encabezados: distancias consistentes */
+.orientation-section-heading h2 {
+    margin-top: 7px;
+    font-size: clamp(1.5rem, 2.3vw, 1.95rem);
+    line-height: 1.28;
+}
+
+.orientation-section-heading > p {
+    margin-top: 8px;
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+/* DESCRIPCIÓN: menos espacio arriba y abajo */
+.orientation-overview {
+    padding: 34px 0;
+}
+
+.orientation-overview-grid {
+    gap: clamp(24px, 4vw, 52px);
+}
+
+.orientation-overview-copy > p {
+    font-size: 0.84rem;
+    line-height: 1.8;
+}
+
+.orientation-audience {
+    gap: 11px;
+    margin-top: 14px;
+    padding: 13px;
+}
+
+/* TEMAS: tarjetas más compactas */
+.orientation-topics-section {
+    padding: 34px 0 37px;
+}
+
+.orientation-topics-heading {
+    max-width: 680px;
+    margin-bottom: 17px;
+}
+
+.orientation-topics-grid {
+    gap: 14px;
+}
+
+.orientation-topic-card {
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.orientation-topic-top {
+    margin-bottom: 14px;
+}
+
+.orientation-topic-card h3 {
+    margin-bottom: 7px;
+    font-size: 0.93rem;
+    line-height: 1.4;
+}
+
+.orientation-topic-card > p {
+    font-size: 0.79rem;
+    line-height: 1.7;
+}
+
+/* APLICACIONES: lista más ordenada */
+.orientation-applications {
+    padding: 34px 0;
+}
+
+.orientation-applications-grid {
+    gap: clamp(24px, 4vw, 52px);
+}
+
+.orientation-benefits-list {
+    gap: 9px;
+}
+
+.orientation-benefits-list li {
+    gap: 10px;
+    padding: 12px;
+    border-radius: 9px;
+}
+
+.orientation-benefits-list li > span {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+}
+
+.orientation-benefits-list p {
+    margin-top: 2px;
+    font-size: 0.79rem;
+    line-height: 1.7;
+}
+
+/* CIERRE: menos espacio vacío y CTA equilibrado */
+.orientation-final-cta {
+    padding-bottom: 29px;
+}
+
+.orientation-final-panel {
+    gap: 22px;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.orientation-final-copy h2 {
+    margin: 7px 0;
+    font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+    line-height: 1.3;
+}
+
+.orientation-final-copy > p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+}
+
+.orientation-bottom-back {
+    margin-top: 13px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .orientation-shell {
+        width: calc(100% - 44px);
+    }
+
+    .orientation-hero-grid {
+        gap: 24px;
+        padding-top: 25px;
+        padding-bottom: 23px;
+    }
+
+    .orientation-hero-copy h1 {
+        font-size: clamp(1.9rem, 4vw, 2.6rem);
+    }
+
+    .orientation-overview-grid,
+    .orientation-applications-grid {
+        gap: 24px;
+    }
+
+    .orientation-overview,
+    .orientation-applications {
+        padding: 29px 0;
+    }
+
+    .orientation-topics-section {
+        padding: 29px 0 32px;
+    }
+
+    .orientation-topic-card {
+        padding: 16px;
+    }
+
+    .orientation-final-panel {
+        padding: 22px;
+    }
+}
+
+/* MÓVIL */
+@media (max-width: 600px) {
+    .orientation-shell {
+        width: calc(100% - 32px);
+    }
+
+    .orientation-hero {
+        padding-top: 16px;
+    }
+
+    .orientation-hero-grid {
+        gap: 19px;
+        padding-top: 23px;
+        padding-bottom: 20px;
+    }
+
+    .orientation-hero-copy h1 {
+        margin: 10px 0;
+        font-size: clamp(1.85rem, 8vw, 2.35rem);
+        line-height: 1.16;
+        letter-spacing: -0.04em;
+    }
+
+    .orientation-hero-summary {
+        font-size: 0.84rem;
+        line-height: 1.7;
+    }
+
+    .orientation-hero-actions {
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .orientation-hero-aside {
+        padding: 16px;
+    }
+
+    .orientation-aside-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .orientation-aside-label {
+        margin-top: 13px;
+    }
+
+    .orientation-hero-aside h2 {
+        font-size: 1.05rem;
+    }
+
+    .orientation-hero-footer {
+        min-height: auto;
+        gap: 7px;
+        padding: 10px 0;
+        font-size: 0.5rem;
+    }
+
+    .orientation-overview,
+    .orientation-applications {
+        padding: 26px 0;
+    }
+
+    .orientation-overview-grid,
+    .orientation-applications-grid {
+        gap: 12px;
+    }
+
+    .orientation-section-heading h2 {
+        font-size: 1.48rem;
+    }
+
+    .orientation-section-heading > p {
+        font-size: 0.8rem;
+    }
+
+    .orientation-audience {
+        margin-top: 12px;
+        padding: 12px;
+    }
+
+    .orientation-topics-section {
+        padding: 26px 0;
+    }
+
+    .orientation-topics-heading {
+        margin-bottom: 14px;
+    }
+
+    .orientation-topics-grid {
+        gap: 10px;
+    }
+
+    .orientation-topic-card {
+        padding: 15px;
+    }
+
+    .orientation-topic-top {
+        margin-bottom: 10px;
+    }
+
+    .orientation-topic-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .orientation-topic-card > p {
+        font-size: 0.78rem;
+    }
+
+    .orientation-benefits-list {
+        gap: 8px;
+    }
+
+    .orientation-benefits-list li {
+        padding: 11px;
+    }
+
+    .orientation-final-cta {
+        padding-bottom: 23px;
+    }
+
+    .orientation-final-panel {
+        gap: 16px;
+        padding: 19px 16px;
+    }
+
+    .orientation-final-copy h2 {
+        font-size: 1.35rem;
+    }
+
+    .orientation-final-copy > p {
+        font-size: 0.79rem;
+    }
+
+    .orientation-bottom-back {
+        margin-top: 11px;
+        font-size: 0.74rem;
+    }
+}
+
+/* MÓVILES ESTRECHOS */
+@media (max-width: 360px) {
+    .orientation-shell {
+        width: calc(100% - 26px);
+    }
+
+    .orientation-hero-copy h1 {
+        font-size: 1.8rem;
+    }
+
+    .orientation-hero-footer {
+        font-size: 0.46rem;
+    }
+}
+
+/* RESPETO A LAS PREFERENCIAS DE MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+    .orientation-topic-card,
+    .orientation-hero-copy,
+    .orientation-hero-aside {
+        animation: none !important;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE COMPLETO — ORIENTACIÓN PROFESIONAL
+   Escritorio · Laptop · Tablet · Móvil · Móvil pequeño
+   Añadir al final de OrientationDetailPage.css
+   ===================================================== */
+
+/* 1. Base: evitar desbordamientos y controlar dimensiones */
+.orientation-detail,
+.orientation-detail *,
+.orientation-not-found,
+.orientation-not-found * {
+    box-sizing: border-box;
+}
+
+.orientation-detail {
+    width: 100%;
+    min-width: 0;
+    overflow: clip;
+}
+
+.orientation-shell {
+    width: min(1080px, calc(100% - 56px));
+    margin-inline: auto;
+}
+
+.orientation-detail h1,
+.orientation-detail h2,
+.orientation-detail h3,
+.orientation-detail p,
+.orientation-detail a,
+.orientation-not-found h1,
+.orientation-not-found p {
+    overflow-wrap: anywhere;
+}
+
+.orientation-detail img,
+.orientation-detail svg {
+    max-width: 100%;
+}
+
+.orientation-detail section[id] {
+    scroll-margin-top: 20px;
+}
+
+/* 2. Hero: contenido y panel lateral */
+.orientation-hero {
+    padding-top: 18px;
+}
+
+.orientation-hero-grid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.7fr);
+    gap: clamp(24px, 4vw, 48px);
+    padding-top: 28px;
+    padding-bottom: 26px;
+}
+
+.orientation-hero-copy,
+.orientation-hero-aside,
+.orientation-overview-grid > *,
+.orientation-applications-grid > * {
+    min-width: 0;
+}
+
+.orientation-hero-copy h1 {
+    font-size: clamp(2rem, 3.6vw, 3.1rem);
+    line-height: 1.15;
+}
+
+.orientation-hero-summary {
+    max-width: 62ch;
+    line-height: 1.75;
+}
+
+.orientation-hero-aside {
+    padding: clamp(17px, 2.2vw, 22px);
+}
+
+.orientation-hero-footer {
+    flex-wrap: wrap;
+    row-gap: 7px;
+}
+
+/* Botones accesibles y adaptables */
+.orientation-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.orientation-button {
+    min-height: 46px;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.orientation-text-link,
+.orientation-back-link,
+.orientation-bottom-back {
+    max-width: 100%;
+}
+
+/* 3. Descripción */
+.orientation-overview {
+    padding-block: 34px;
+}
+
+.orientation-overview-grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(24px, 4vw, 48px);
+}
+
+.orientation-audience {
+    min-width: 0;
+}
+
+.orientation-audience > div {
+    min-width: 0;
+}
+
+/* 4. Temas: rejilla fluida */
+.orientation-topics-section {
+    padding-block: 34px;
+}
+
+.orientation-topics-heading {
+    margin-bottom: 18px;
+}
+
+.orientation-topics-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.orientation-topic-card {
+    min-width: 0;
+    height: 100%;
+    padding: 18px;
+}
+
+.orientation-topic-card h3 {
+    overflow-wrap: anywhere;
+}
+
+/* 5. Aplicaciones */
+.orientation-applications {
+    padding-block: 34px;
+}
+
+.orientation-applications-grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(24px, 4vw, 48px);
+}
+
+.orientation-benefits-list li {
+    min-width: 0;
+}
+
+.orientation-benefits-list li > span {
+    flex-shrink: 0;
+}
+
+/* 6. Llamada a la acción */
+.orientation-final-cta {
+    padding-bottom: 30px;
+}
+
+.orientation-final-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: clamp(20px, 3vw, 28px);
+}
+
+.orientation-final-copy {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.orientation-button-light {
+    flex: 0 0 auto;
+}
+
+/* 7. Laptop y tablet horizontal */
+@media (max-width: 1024px) {
+    .orientation-shell {
+        width: calc(100% - 44px);
+    }
+
+    .orientation-hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+        gap: 24px;
+    }
+
+    .orientation-hero-copy h1 {
+        font-size: clamp(1.9rem, 4vw, 2.7rem);
+    }
+
+    .orientation-overview-grid,
+    .orientation-applications-grid {
+        gap: 24px;
+    }
+
+    .orientation-topics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .orientation-topic-card:last-child {
+        grid-column: auto;
+    }
+}
+
+/* 8. Tablet vertical y móviles grandes */
+@media (max-width: 768px) {
+    .orientation-shell {
+        width: calc(100% - 36px);
+    }
+
+    .orientation-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding-top: 25px;
+        padding-bottom: 22px;
+    }
+
+    .orientation-hero-copy h1 {
+        max-width: 650px;
+        font-size: clamp(2rem, 5.5vw, 2.7rem);
+    }
+
+    .orientation-hero-summary {
+        font-size: 0.88rem;
+    }
+
+    .orientation-hero-aside {
+        display: grid;
+        grid-template-columns: 46px minmax(0, 1fr);
+        align-items: start;
+        column-gap: 14px;
+        padding: 17px;
+    }
+
+    .orientation-aside-icon {
+        grid-row: 1 / span 3;
+        width: 44px;
+        height: 44px;
+    }
+
+    .orientation-aside-label {
+        margin-top: 0;
+    }
+
+    .orientation-hero-aside h2 {
+        margin-block: 5px 7px;
+        font-size: 1.08rem;
+    }
+
+    .orientation-hero-aside > p {
+        grid-column: 2;
+    }
+
+    .orientation-overview-grid,
+    .orientation-applications-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .orientation-overview,
+    .orientation-applications,
+    .orientation-topics-section {
+        padding-block: 28px;
+    }
+
+    .orientation-topics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .orientation-final-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .orientation-button-light {
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+/* 9. Móviles */
+@media (max-width: 600px) {
+    .orientation-shell {
+        width: calc(100% - 32px);
+    }
+
+    .orientation-hero {
+        padding-top: 15px;
+    }
+
+    .orientation-back-link {
+        gap: 7px;
+        font-size: 0.74rem;
+    }
+
+    .orientation-hero-grid {
+        gap: 17px;
+        padding-top: 22px;
+        padding-bottom: 19px;
+    }
+
+    .orientation-eyebrow {
+        font-size: 0.61rem;
+        letter-spacing: 0.1em;
+    }
+
+    .orientation-hero-copy h1 {
+        margin-block: 10px;
+        font-size: clamp(1.85rem, 8.5vw, 2.4rem);
+        line-height: 1.16;
+        letter-spacing: -0.04em;
+    }
+
+    .orientation-hero-summary {
+        font-size: 0.84rem;
+        line-height: 1.7;
+    }
+
+    .orientation-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 9px;
+        margin-top: 16px;
+    }
+
+    .orientation-hero-actions .orientation-button {
+        width: 100%;
+    }
+
+    .orientation-text-link {
+        justify-content: center;
+        min-height: 42px;
+    }
+
+    .orientation-hero-aside {
+        grid-template-columns: 40px minmax(0, 1fr);
+        column-gap: 11px;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .orientation-aside-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .orientation-aside-label {
+        font-size: 0.56rem;
+    }
+
+    .orientation-hero-aside h2 {
+        font-size: 0.98rem;
+        line-height: 1.4;
+    }
+
+    .orientation-hero-aside > p {
+        font-size: 0.76rem;
+        line-height: 1.65;
+    }
+
+    .orientation-hero-footer {
+        gap: 6px;
+        padding-block: 10px;
+        font-size: 0.48rem;
+        letter-spacing: 0.06em;
+    }
+
+    .orientation-section-label {
+        font-size: 0.59rem;
+    }
+
+    .orientation-section-heading h2 {
+        margin-top: 6px;
+        font-size: clamp(1.4rem, 6.2vw, 1.7rem);
+        line-height: 1.28;
+    }
+
+    .orientation-section-heading > p {
+        font-size: 0.8rem;
+        line-height: 1.7;
+    }
+
+    .orientation-overview,
+    .orientation-applications,
+    .orientation-topics-section {
+        padding-block: 25px;
+    }
+
+    .orientation-overview-grid,
+    .orientation-applications-grid {
+        gap: 12px;
+    }
+
+    .orientation-overview-copy > p {
+        font-size: 0.82rem;
+        line-height: 1.75;
+    }
+
+    .orientation-audience {
+        gap: 10px;
+        margin-top: 12px;
+        padding: 12px;
+    }
+
+    .orientation-audience-icon {
+        width: 33px;
+        height: 33px;
+        flex-basis: 33px;
+    }
+
+    .orientation-audience strong {
+        font-size: 0.77rem;
+    }
+
+    .orientation-audience p {
+        font-size: 0.75rem;
+    }
+
+    .orientation-topics-heading {
+        margin-bottom: 13px;
+    }
+
+    .orientation-topics-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .orientation-topic-card {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .orientation-topic-top {
+        margin-bottom: 10px;
+    }
+
+    .orientation-topic-card h3 {
+        font-size: 0.91rem;
+        line-height: 1.45;
+    }
+
+    .orientation-topic-card > p {
+        font-size: 0.78rem;
+        line-height: 1.7;
+    }
+
+    .orientation-benefits-list {
+        gap: 8px;
+    }
+
+    .orientation-benefits-list li {
+        gap: 9px;
+        padding: 11px;
+    }
+
+    .orientation-benefits-list li > span {
+        width: 28px;
+        height: 28px;
+        flex-basis: 28px;
+    }
+
+    .orientation-benefits-list p {
+        font-size: 0.77rem;
+        line-height: 1.65;
+    }
+
+    .orientation-final-cta {
+        padding-bottom: 23px;
+    }
+
+    .orientation-final-panel {
+        gap: 15px;
+        padding: 18px 15px;
+        border-radius: 11px;
+    }
+
+    .orientation-final-copy h2 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+
+    .orientation-final-copy > p {
+        font-size: 0.78rem;
+        line-height: 1.7;
+    }
+
+    .orientation-button-light {
+        width: 100%;
+    }
+
+    .orientation-bottom-back {
+        align-items: flex-start;
+        font-size: 0.73rem;
+        line-height: 1.6;
+    }
+
+    .orientation-not-found {
+        min-height: auto;
+        padding-block: 48px;
+    }
+
+    .orientation-not-found h1 {
+        font-size: clamp(1.8rem, 8vw, 2.3rem);
+    }
+
+    .orientation-not-found p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+}
+
+/* 10. Móviles pequeños */
+@media (max-width: 380px) {
+    .orientation-shell {
+        width: calc(100% - 26px);
+    }
+
+    .orientation-hero-copy h1 {
+        font-size: 1.8rem;
+    }
+
+    .orientation-hero-footer {
+        font-size: 0.44rem;
+        gap: 5px;
+    }
+
+    .orientation-footer-separator {
+        width: 3px;
+        height: 3px;
+    }
+
+    .orientation-hero-aside {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .orientation-aside-icon {
+        grid-row: auto;
+    }
+
+    .orientation-hero-aside > p {
+        grid-column: 1;
+    }
+
+    .orientation-topic-card {
+        padding: 13px;
+    }
+
+    .orientation-final-panel {
+        padding: 16px 13px;
+    }
+}
+
+/* 11. Pantallas grandes */
+@media (min-width: 1440px) {
+    .orientation-shell {
+        width: min(1120px, calc(100% - 80px));
+    }
+
+    .orientation-hero-grid {
+        gap: 55px;
+        padding-top: 34px;
+        padding-bottom: 31px;
+    }
+
+    .orientation-overview,
+    .orientation-applications {
+        padding-block: 40px;
+    }
+
+    .orientation-topics-section {
+        padding-block: 40px;
+    }
+}
+
+/* 12. Teclado, movimiento y accesibilidad */
+.orientation-detail a:focus-visible,
+.orientation-not-found a:focus-visible {
+    outline: 3px solid #83bfff;
+    outline-offset: 4px;
+}
+
+@media (hover: none) {
+    .orientation-topic-card:hover,
+    .orientation-benefits-list li:hover,
+    .orientation-button:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .orientation-detail *,
+    .orientation-detail *::before,
+    .orientation-detail *::after,
+    .orientation-not-found *,
+    .orientation-not-found *::before,
+    .orientation-not-found *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
