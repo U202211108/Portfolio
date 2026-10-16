@@ -1,12 +1,10 @@
 import {
-    ArrowUpRight,
     BriefcaseBusiness,
     Flame,
     Network,
     Settings2,
     ShieldCheck,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 
 import { specialties } from "../../data/portfolio";
 import "../../styles/Specialties.css";
@@ -17,14 +15,6 @@ const specialtyIcons = {
     "gestion-proyectos": BriefcaseBusiness,
     "gestion-mantenimiento": Settings2,
     "redes-sistemas": Network,
-};
-
-const specialtyRoutes: Record<string, string> = {
-    "seguridad-electronica": "seguridad-electronica",
-    "proteccion-incendios": "proteccion-contra-incendios",
-    "gestion-proyectos": "gestion-de-proyectos",
-    "gestion-mantenimiento": "gestion-de-mantenimiento",
-    "redes-sistemas": "redes-y-sistemas",
 };
 
 export default function Specialties() {
@@ -67,7 +57,7 @@ export default function Specialties() {
                             item.id as keyof typeof specialtyIcons
                             ] ?? BriefcaseBusiness;
 
-                        const slug = specialtyRoutes[item.id];
+
 
                         return (
                             <article
