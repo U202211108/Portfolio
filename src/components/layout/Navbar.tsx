@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -10,7 +9,6 @@ const links = [
     { label: "Perfil", id: "sobre-mi" },
     { label: "Especialidades", id: "especialidades" },
     { label: "Trayectoria", id: "experiencia" },
-    { label: "Orientación", id: "servicios" },
 ];
 
 const sectionIds = [
@@ -18,7 +16,6 @@ const sectionIds = [
     "sobre-mi",
     "especialidades",
     "experiencia",
-    "servicios",
     "contacto",
 ];
 
@@ -28,6 +25,7 @@ export default function Navbar() {
 
     const location = useLocation();
     const navigate = useNavigate();
+
     const isScrollingToSection = useRef(false);
     const scrollTimeout = useRef<number | undefined>(undefined);
 
@@ -48,7 +46,11 @@ export default function Navbar() {
         setActiveSection(id);
         isScrollingToSection.current = true;
 
-        window.history.replaceState(null, "", `/#${id}`);
+        window.history.replaceState(
+            null,
+            "",
+            `${window.location.pathname}${window.location.search}#${id}`,
+        );
 
         target.scrollIntoView({
             behavior: "smooth",
@@ -82,9 +84,7 @@ export default function Navbar() {
 
                 if (!element) continue;
 
-                const rect = element.getBoundingClientRect();
-
-                if (rect.top <= marker) {
+                if (element.getBoundingClientRect().top <= marker) {
                     current = id;
                 }
             }
@@ -156,6 +156,7 @@ export default function Navbar() {
                         goToSection("inicio");
                     }
                 }}
+                aria-label={`Ir al inicio del portafolio de ${profile.name}`}
             >
                 <span className="brand-mark">EC</span>
 
@@ -207,8 +208,8 @@ export default function Navbar() {
                     }
                     onClick={() => goToSection("contacto")}
                 >
-                    Contactar
-                    <ArrowRight size={16} />
+                    Contacto
+                    <ArrowRight size={16} aria-hidden="true" />
                 </button>
             </nav>
         </header>

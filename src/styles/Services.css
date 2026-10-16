@@ -1363,3 +1363,144 @@
         transition: none;
     }
 }
+
+/* ==================================================
+   AJUSTE VISUAL: TARJETAS DE EXPERIENCIA PROFESIONAL
+   ================================================== */
+
+.services-card-top {
+    display: grid;
+    grid-template-columns: 30px 43px minmax(0, 1fr);
+    align-items: center;
+    gap: 13px;
+    min-height: 43px;
+    margin-bottom: 24px;
+}
+
+.services-card-number {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 1;
+}
+
+.services-card-icon {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    flex: none;
+    place-items: center;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.services-card-index {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+    min-width: 0;
+    margin-left: 0;
+    line-height: 1.35;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.services-card-index span {
+    display: block;
+}
+
+.services-achievement-category {
+    display: block;
+    margin-bottom: 10px;
+    color: #397bb8;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.045em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.services-option-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.services-card-description {
+    flex: 1;
+}
+
+.services-achievement-footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 24px;
+    color: #60758a;
+    font-size: 0.77rem;
+    line-height: 1.5;
+}
+
+.services-achievement-footer svg {
+    display: block;
+    flex: 0 0 17px;
+    color: #397bb8;
+}
+
+.services-disclaimer {
+    align-items: flex-start;
+}
+
+.services-disclaimer > svg {
+    display: block;
+    flex: 0 0 17px;
+    margin-top: 2px;
+}
+
+.services-professional-link {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.services-professional-link .services-card-link {
+    width: auto;
+    min-height: 42px;
+    justify-content: flex-start;
+    gap: 9px;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+@media (max-width: 600px) {
+    .services-card-top {
+        grid-template-columns: 25px 40px minmax(0, 1fr);
+        gap: 10px;
+        min-height: 40px;
+        margin-bottom: 19px;
+    }
+
+    .services-card-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .services-card-icon svg {
+        width: 21px;
+        height: 21px;
+    }
+
+    .services-card-index {
+        font-size: 0.58rem;
+    }
+
+    .services-achievement-footer {
+        align-items: flex-start;
+        font-size: 0.75rem;
+    }
+
+    .services-professional-link {
+        justify-content: flex-start;
+    }
+}

@@ -17,8 +17,6 @@ import Specialties from "./components/sections/Specialties";
 import Experience from "./components/sections/Experience";
 import Services from "./components/sections/Services";
 import Contact from "./components/sections/Contact";
-
-import OrientationDetailPage from "./components/sections/OrientationDetailPage";
 import SpecialtyDetailPage from "./components/sections/SpecialtyDetailPage";
 
 import "./App.css";
@@ -53,12 +51,6 @@ function AppLayout() {
         <Route
           path="/especialidades/:slug"
           element={<SpecialtyDetailPage />}
-        />
-
-        {/* Detalle de orientación profesional */}
-        <Route
-          path="/orientacion/:slug"
-          element={<OrientationDetailPage />}
         />
 
         <Route

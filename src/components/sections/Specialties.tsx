@@ -1,19 +1,17 @@
-
 import {
     ArrowUpRight,
-    BookOpen,
     BriefcaseBusiness,
-    Network,
-    ShieldCheck,
     Flame,
+    Network,
     Settings2,
+    ShieldCheck,
 } from "lucide-react";
-
 import { Link } from "react-router-dom";
+
 import { specialties } from "../../data/portfolio";
 import "../../styles/Specialties.css";
 
-const specialtyIcons: Record<string, typeof ShieldCheck> = {
+const specialtyIcons = {
     "seguridad-electronica": ShieldCheck,
     "proteccion-incendios": Flame,
     "gestion-proyectos": BriefcaseBusiness,
@@ -39,37 +37,35 @@ export default function Specialties() {
             <div className="section-shell specialties-shell">
                 <header className="section-heading centered-heading specialties-heading">
                     <span className="section-kicker specialties-kicker">
-                        <span className="specialties-kicker-dot" />
-                        02 / ÁREAS DE CONOCIMIENTO
+                        <span
+                            className="specialties-kicker-dot"
+                            aria-hidden="true"
+                        />
+                        02 / ESPECIALIDADES PROFESIONALES
                     </span>
 
                     <h2 id="specialties-title">
-                        Mi experiencia, al servicio de{" "}
+                        Áreas de especialización en{" "}
                         <span className="text-accent">
-                            tu aprendizaje.
+                            ingeniería electrónica.
                         </span>
                     </h2>
 
                     <p>
-                        A lo largo de mi trayectoria en ingeniería electrónica
-                        y gestión técnica, he adquirido conocimientos que
-                        deseo compartir. Te invito a explorar estas áreas
-                        y descubrir cómo puedo orientarte desde mi experiencia
-                        profesional.
+                        Mi trayectoria profesional comprende sistemas
+                        de seguridad electrónica, protección contra
+                        incendios, gestión de proyectos y mantenimiento.
+                        Estas son las principales áreas de especialización
+                        de mi perfil.
                     </p>
-
-                    <div className="specialties-heading-note">
-                        <BookOpen size={17} strokeWidth={1.8} />
-                        <span>
-                            Orientación virtual para estudiantes universitarios
-                        </span>
-                    </div>
                 </header>
 
                 <div className="specialty-grid">
                     {specialties.map((item, index) => {
                         const Icon =
-                            specialtyIcons[item.id] ?? BookOpen;
+                            specialtyIcons[
+                            item.id as keyof typeof specialtyIcons
+                            ] ?? BriefcaseBusiness;
 
                         const slug = specialtyRoutes[item.id];
 
@@ -93,13 +89,13 @@ export default function Specialties() {
                                         <Icon
                                             size={23}
                                             strokeWidth={1.7}
+                                            aria-hidden="true"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="specialty-card-content">
                                     <h3>{item.title}</h3>
-
                                     <p>{item.description}</p>
                                 </div>
 
@@ -108,57 +104,9 @@ export default function Specialties() {
                                         <span key={tag}>{tag}</span>
                                     ))}
                                 </div>
-
-                                <div className="specialty-card-footer">
-                                    {slug ? (
-                                        <Link
-                                            className="specialty-link"
-                                            to={`/especialidades/${slug}`}
-                                            aria-label={`Conocer más sobre ${item.title}`}
-                                        >
-                                            <span>Ver especialidad</span>
-
-                                            <span className="specialty-link-icon">
-                                                <ArrowUpRight
-                                                    size={17}
-                                                    strokeWidth={1.9}
-                                                />
-                                            </span>
-                                        </Link>
-                                    ) : (
-                                        <span className="specialty-link specialty-link-disabled">
-                                            Información próximamente
-                                        </span>
-                                    )}
-                                </div>
                             </article>
                         );
                     })}
-                </div>
-
-                <div className="specialties-bottom">
-                    <div className="specialties-bottom-mark">
-                        <BriefcaseBusiness
-                            size={19}
-                            strokeWidth={1.7}
-                        />
-                    </div>
-
-                    <p>
-                        <strong>¿Tienes dudas sobre alguna de estas áreas?</strong>
-                        <span>
-                            Podemos conversar sobre tus intereses académicos
-                            y los temas en los que necesitas orientación.
-                        </span>
-                    </p>
-
-                    <Link
-                        to="/#contacto"
-                        className="specialties-contact-link"
-                    >
-                        Hablemos
-                        <ArrowUpRight size={17} />
-                    </Link>
                 </div>
             </div>
         </section>

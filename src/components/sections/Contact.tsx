@@ -1,109 +1,94 @@
 
 import {
-    ArrowRight,
+    ArrowUpRight,
     Mail,
     MessageCircle,
-    ShieldCheck,
     UserRound,
 } from "lucide-react";
 
 import { profile } from "../../data/portfolio";
-import { getWhatsAppUrl } from "../../utils/contact";
 import "../../styles/Contact.css";
 
 export default function Contact() {
-    const whatsappUrl = getWhatsAppUrl(
-        "Hola, soy estudiante y quisiera consultar con Emilio Chávarri sobre orientación profesional relacionada con ingeniería electrónica. Me gustaría conocer los temas que se pueden abordar, la modalidad y la disponibilidad."
-    );
 
-
-    const emailSubject = encodeURIComponent(
-        "Consulta sobre orientación profesional"
-    );
-
-    const emailBody = encodeURIComponent(
-        "Hola, Emilio:\n\n" +
-        "Soy estudiante y quisiera consultar sobre la orientación " +
-        "profesional relacionada con tu experiencia en ingeniería electrónica.\n\n" +
-        "Me gustaría conocer los temas que se pueden abordar y la disponibilidad.\n\n" +
-        "Muchas gracias."
-    );
-
-    const gmailUrl =
-        `https://mail.google.com/mail/?view=cm&fs=1` +
-        `&to=${encodeURIComponent(profile.email)}` +
-        `&su=${emailSubject}` +
-        `&body=${emailBody}`;
-
+    const phoneNumber = profile.phone.replace(/\D/g, "");
 
     return (
-        <section className="section section-contact" id="contacto">
+        <section
+            className="section section-contact"
+            id="contacto"
+            aria-labelledby="contact-title"
+        >
             <div className="section-shell">
                 <div className="contact-panel">
                     <div className="contact-copy">
                         <div className="contact-eyebrow">
-                            <span className="contact-eyebrow-line" />
+                            <span
+                                className="contact-eyebrow-line"
+                                aria-hidden="true"
+                            />
                             <span>05 / CONTACTO</span>
                         </div>
 
-                        <h2>
-                            Tu próxima conversación puede acercarte a la{" "}
-                            <span>experiencia real.</span>
+                        <h2 id="contact-title">
+                            Información de{" "}
+                            <span>contacto profesional.</span>
                         </h2>
 
                         <p className="contact-description">
-                            ¿Estás estudiando ingeniería y necesitas
-                            comprender mejor un tema técnico? Cuéntame
-                            qué te interesa y consulta las opciones
-                            de orientación disponibles.
+                            Para consultas profesionales, oportunidades
+                            laborales o comunicaciones relacionadas con mi
+                            trayectoria en ingeniería electrónica, puedes
+                            encontrar mis datos de contacto a continuación.
                         </p>
 
-                        <div className="contact-trust-note">
-                            <span className="contact-trust-icon">
-                                <ShieldCheck size={19} />
-                            </span>
-
-                            <span>
-                                La disponibilidad y el alcance de la
-                                orientación se coordinan directamente.
-                            </span>
-                        </div>
-
-                        <div className="contact-actions">
+                        <div className="contact-details">
                             <a
-                                className="contact-button contact-button-primary"
-                                href={whatsappUrl}
+                                className="contact-detail-link"
+                                href={`mailto:${profile.email}`}
+                            >
+                                <span className="contact-detail-icon">
+                                    <Mail size={19} aria-hidden="true" />
+                                </span>
+
+                                <span className="contact-detail-copy">
+                                    <small>CORREO ELECTRÓNICO</small>
+                                    <strong>{profile.email}</strong>
+                                </span>
+
+                                <ArrowUpRight size={17} aria-hidden="true" />
+                            </a>
+
+                            <a
+                                className="contact-detail-link"
+                                href={`https://wa.me/${phoneNumber}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <MessageCircle size={19} />
-                                <span>Escribir por WhatsApp</span>
-                                <ArrowRight size={18} />
+                                <span className="contact-detail-icon">
+                                    <MessageCircle size={19} aria-hidden="true" />
+                                </span>
+
+                                <span className="contact-detail-copy">
+                                    <small>TELÉFONO</small>
+                                    <strong>+{phoneNumber}</strong>
+                                </span>
+
+                                <ArrowUpRight size={17} aria-hidden="true" />
                             </a>
-
-
-                            <a
-                                className="contact-button contact-button-secondary"
-                                href={gmailUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Mail size={18} />
-                                <span>Enviar un correo</span>
-                            </a>
-
                         </div>
-
-                        <p className="contact-response-hint">
-                            Elige el medio que te resulte más cómodo para
-                            iniciar la conversación.
-                        </p>
                     </div>
 
-                    <aside className="contact-profile-card">
+                    <aside
+                        className="contact-profile-card"
+                        aria-label="Perfil profesional"
+                    >
                         <div className="contact-card-top">
                             <div className="contact-avatar">
-                                <UserRound size={28} />
+                                <UserRound
+                                    size={28}
+                                    aria-hidden="true"
+                                />
                             </div>
 
                             <span className="contact-profile-status">
@@ -118,21 +103,32 @@ export default function Contact() {
                         <h3>{profile.name}</h3>
 
                         <p className="contact-card-description">
-                            Experiencia en seguridad electrónica,
-                            protección contra incendios, mantenimiento
-                            y gestión de servicios.
+                            Experiencia profesional en ingeniería electrónica,
+                            seguridad electrónica y gestión técnica.
                         </p>
 
                         <div className="contact-card-divider" />
 
                         <div className="contact-card-footer">
-                            <span className="contact-card-dot" />
-                            <span>Consulta directamente sobre tus objetivos</span>
+                            <span
+                                className="contact-card-dot"
+                                aria-hidden="true"
+                            />
+                            <span>
+                                Contacto para asuntos profesionales
+                            </span>
                         </div>
                     </aside>
 
-                    <div className="contact-decoration contact-decoration-one" />
-                    <div className="contact-decoration contact-decoration-two" />
+                    <div
+                        className="contact-decoration contact-decoration-one"
+                        aria-hidden="true"
+                    />
+
+                    <div
+                        className="contact-decoration contact-decoration-two"
+                        aria-hidden="true"
+                    />
                 </div>
             </div>
         </section>

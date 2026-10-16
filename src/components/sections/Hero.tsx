@@ -1,9 +1,8 @@
-
 import {
     ArrowDown,
     ArrowRight,
     BriefcaseBusiness,
-    GraduationCap,
+    ShieldCheck,
 } from "lucide-react";
 
 import PapaPhoto from "../../assets/papa-perfil.jpeg";
@@ -20,39 +19,46 @@ export default function Hero() {
             <div className="hero-shell">
                 <div className="hero-copy">
                     <div className="hero-eyebrow">
-                        <span className="hero-eyebrow-line" />
-                        <span>INGENIERÍA · EXPERIENCIA · CONOCIMIENTO</span>
+                        <span
+                            className="hero-eyebrow-line"
+                            aria-hidden="true"
+                        />
+                        <span>
+                            INGENIERÍA · TRAYECTORIA · ESPECIALIZACIÓN
+                        </span>
                     </div>
 
                     <h1 id="hero-title">
-                        La ingeniería cobra sentido con{" "}
+                        Ingeniería que conecta{" "}
                         <span className="hero-title-accent">
-                            la experiencia real.
+                            tecnología, seguridad y gestión.
                         </span>
                     </h1>
 
                     <p className="hero-description">
-                        Soy Emilio Chávarri Jiménez, profesional de
-                        Ingeniería Electrónica con más de 25 años de
-                        experiencia en seguridad electrónica, protección
-                        contra incendios, mantenimiento y gestión de
-                        servicios.
+                        Soy {profile.name}, profesional de Ingeniería
+                        Electrónica con más de 25 años de experiencia
+                        en seguridad electrónica, protección contra
+                        incendios, mantenimiento y gestión de servicios.
                     </p>
 
                     <p className="hero-description hero-description-secondary">
-                        Comparto mi experiencia con estudiantes
-                        universitarios para ayudarlos a comprender conceptos
-                        técnicos y relacionarlos con situaciones reales
-                        del entorno profesional.
+                        Mi trayectoria integra conocimientos técnicos
+                        y experiencia en la gestión de servicios y
+                        proyectos, con especial atención a los sistemas
+                        de seguridad y la continuidad operativa.
                     </p>
 
                     <div className="hero-actions">
                         <a
                             className="hero-button hero-button-primary"
-                            href="#especialidades"
+                            href="#experiencia"
                         >
-                            Conoce mis especialidades
-                            <ArrowRight size={18} aria-hidden="true" />
+                            Conoce mi trayectoria
+                            <ArrowRight
+                                size={18}
+                                aria-hidden="true"
+                            />
                         </a>
                     </div>
 
@@ -68,17 +74,23 @@ export default function Hero() {
                         <div className="hero-proof-copy">
                             <strong>{profile.experience}</strong>
                             <span>
-                                Experiencia en ingeniería, sistemas
-                                técnicos y gestión de servicios
+                                Trayectoria en ingeniería electrónica,
+                                sistemas técnicos y gestión de servicios
                             </span>
                         </div>
                     </div>
 
-                    <a className="hero-scroll-link" href="#sobre-mi">
+                    <a
+                        className="hero-scroll-link"
+                        href="#sobre-mi"
+                    >
                         <span className="hero-scroll-icon">
-                            <ArrowDown size={15} aria-hidden="true" />
+                            <ArrowDown
+                                size={15}
+                                aria-hidden="true"
+                            />
                         </span>
-                        <span>Conoce mi trayectoria</span>
+                        <span>Conoce mi perfil profesional</span>
                     </a>
                 </div>
 
@@ -97,7 +109,7 @@ export default function Hero() {
                         <div className="hero-portrait-image">
                             <img
                                 src={PapaPhoto}
-                                alt="Retrato de Emilio Chávarri Jiménez, profesional de Ingeniería Electrónica"
+                                alt={`Retrato de ${profile.name}, profesional de Ingeniería Electrónica`}
                                 fetchPriority="high"
                             />
 
@@ -111,7 +123,7 @@ export default function Hero() {
 
                     <div className="hero-floating-card">
                         <div className="hero-floating-icon">
-                            <GraduationCap
+                            <ShieldCheck
                                 size={23}
                                 strokeWidth={1.8}
                                 aria-hidden="true"
@@ -119,16 +131,17 @@ export default function Hero() {
                         </div>
 
                         <div className="hero-floating-copy">
-                            <strong>Orientación virtual</strong>
+                            <strong>Especialización técnica</strong>
                             <span>
-                                Aprende desde la experiencia profesional
+                                Seguridad electrónica y protección
+                                contra incendios
                             </span>
                         </div>
                     </div>
 
                     <div className="hero-visual-label">
-                        <span />
-                        EXPERIENCIA · CONOCIMIENTO · APLICACIÓN
+                        <span aria-hidden="true" />
+                        EXPERIENCIA · ESPECIALIZACIÓN · GESTIÓN
                     </div>
                 </div>
             </div>

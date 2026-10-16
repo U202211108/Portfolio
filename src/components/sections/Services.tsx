@@ -1,139 +1,103 @@
 
 import {
-    ArrowUpRight,
-    BookOpen,
-    ClipboardCheck,
+    BriefcaseBusiness,
+    Code2,
+    Flame,
     ShieldCheck,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+
+import { achievements } from "../../data/portfolio";
 import "../../styles/Services.css";
 
-const services = [
-    {
-        id: "tecnica",
-        number: "01",
-        icon: BookOpen,
-        title: "Orientación técnica para estudiantes",
-        description:
-            "Comprende conceptos de ingeniería y relaciónalos con situaciones del entorno profesional.",
-        topics: [
-            "Aclaración de conceptos técnicos",
-            "Relación entre teoría y práctica",
-        ],
-    },
-    {
-        id: "sistemas-y-mantenimiento",
-        number: "02",
-        icon: ShieldCheck,
-        title: "Sistemas de seguridad y mantenimiento",
-        description:
-            "Explora aspectos relacionados con seguridad electrónica, protección contra incendios y mantenimiento.",
-        topics: [
-            "Sistemas de seguridad y protección",
-            "Mantenimiento y supervisión",
-        ],
-    },
-    {
-        id: "gestion-de-proyectos",
-        number: "03",
-        icon: ClipboardCheck,
-        title: "Gestión y seguimiento de proyectos",
-        description:
-            "Conoce aspectos prácticos de planificación, seguimiento de trabajos y coordinación técnica.",
-        topics: [
-            "Seguimiento de trabajos y servicios",
-            "Presupuestos y coordinación técnica",
-        ],
-    },
-];
+const achievementIcons = [ShieldCheck, Flame, Code2];
 
 export default function Services() {
     return (
-        <section className="section section-services" id="servicios">
+        <section
+            className="section section-services"
+            id="logros"
+            aria-labelledby="services-title"
+        >
             <div className="section-shell services-container">
                 <header className="services-heading">
                     <div className="services-heading-copy">
                         <span className="section-kicker services-kicker">
-                            04 / ORIENTACIÓN PROFESIONAL
+                            04 / EXPERIENCIA DESTACADA
                         </span>
 
-                        <h2>
-                            Experiencia real para comprender la{" "}
-                            <span className="text-accent">ingeniería.</span>
+                        <h2 id="services-title">
+                            Contribuciones en{" "}
+                            <span className="text-accent">
+                                áreas técnicas y de gestión.
+                            </span>
                         </h2>
 
                         <p>
-                            Explora las áreas relacionadas a mi trayectoria y descubre los temas, aplicaciones
-                            y posibilidades de orientación.
+                            Algunos ámbitos de trabajo que forman parte
+                            de mi trayectoria profesional en ingeniería
+                            electrónica, mantenimiento y gestión técnica.
                         </p>
                     </div>
                 </header>
 
                 <div className="services-card-grid">
-                    {services.map((service, index) => {
-                        const Icon = service.icon;
+                    {achievements.map((achievement, index) => {
+                        const Icon =
+                            achievementIcons[index] ?? BriefcaseBusiness;
 
                         return (
                             <article
                                 className="services-option-card"
-                                key={service.id}
+                                key={achievement.title}
                                 style={{
                                     animationDelay: `${index * 100}ms`,
                                 }}
                             >
                                 <div className="services-card-top">
                                     <span className="services-card-number">
-                                        {service.number}
+                                        {String(index + 1).padStart(2, "0")}
                                     </span>
 
                                     <div className="services-card-icon">
-                                        <Icon size={23} strokeWidth={1.8} />
+                                        <Icon
+                                            size={23}
+                                            strokeWidth={1.8}
+                                            aria-hidden="true"
+                                        />
                                     </div>
 
                                     <span className="services-card-index">
-                                        ÁREA DE ORIENTACIÓN
+                                        EXPERIENCIA
+                                        <span>PROFESIONAL</span>
                                     </span>
                                 </div>
 
-                                <h3>{service.title}</h3>
+                                <span className="services-achievement-category">
+                                    {achievement.category}
+                                </span>
+
+                                <h3>{achievement.title}</h3>
 
                                 <p className="services-card-description">
-                                    {service.description}
+                                    {achievement.description}
                                 </p>
 
-                                <div className="services-card-divider" />
+                                <div
+                                    className="services-card-divider"
+                                    aria-hidden="true"
+                                />
 
-                                <h4>Temas relacionados</h4>
-
-                                <ul className="services-topic-list">
-                                    {service.topics.map((topic) => (
-                                        <li key={topic}>
-                                            <span className="services-topic-dot" />
-                                            <span>{topic}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <Link
-                                    className="services-card-link"
-                                    to={`/orientacion/${service.id}`}
-                                    aria-label={`Conocer más sobre ${service.title}`}
-                                >
-                                    <span>Conocer esta área</span>
-                                    <ArrowUpRight size={17} />
-                                </Link>
+                                <div className="services-achievement-footer">
+                                    <BriefcaseBusiness
+                                        size={17}
+                                        strokeWidth={1.8}
+                                        aria-hidden="true"
+                                    />
+                                    <span>Área de trayectoria profesional</span>
+                                </div>
                             </article>
                         );
                     })}
-                </div>
-
-                <div className="services-disclaimer">
-                    <ShieldCheck size={17} />
-                    <p>
-                        Los temas concretos, el alcance de la orientación
-                        y la disponibilidad se coordinan directamente
-                        según cada consulta.
-                    </p>
                 </div>
             </div>
         </section>

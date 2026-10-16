@@ -2,82 +2,22 @@
 import {
     BriefcaseBusiness,
     CheckCircle2,
-    ClipboardList,
     Flame,
     Network,
     Settings2,
     ShieldCheck,
 } from "lucide-react";
 
+import { specialties } from "../../data/portfolio";
 import "../../styles/Experience.css";
 
-const orientationAreas = [
-    {
-        number: "01",
-        category: "SEGURIDAD ELECTRÓNICA",
-        title: "Sistemas de seguridad y videovigilancia",
-        description:
-            "Orientación sobre CCTV, videovigilancia mediante redes IP, control de accesos y sistemas de alarma, desde sus fundamentos hasta los criterios técnicos que intervienen en su implementación.",
-        topics: [
-            "CCTV y videovigilancia IP",
-            "Control de accesos y alarmas",
-            "Fundamentos de sistemas de seguridad",
-        ],
-        icon: ShieldCheck,
-    },
-    {
-        number: "02",
-        category: "PROTECCIÓN CONTRA INCENDIOS",
-        title: "Detección, alarma y extinción de incendios",
-        description:
-            "Compartir conocimientos sobre sistemas de detección y protección contra incendios, criterios de diseño y aplicación de normas técnicas NFPA en el contexto de proyectos y operaciones.",
-        topics: [
-            "Detección y alarma contra incendios",
-            "Sistemas de extinción",
-            "Normativa técnica NFPA",
-        ],
-        icon: Flame,
-    },
-    {
-        number: "03",
-        category: "MANTENIMIENTO",
-        title: "Planificación y gestión del mantenimiento",
-        description:
-            "Comprender cómo se organizan las actividades de mantenimiento preventivo y correctivo, la supervisión de servicios técnicos y el seguimiento necesario para favorecer la continuidad operativa.",
-        topics: [
-            "Mantenimiento preventivo y correctivo",
-            "Supervisión de servicios",
-            "Seguimiento y mejora de procesos",
-        ],
-        icon: Settings2,
-    },
-    {
-        number: "04",
-        category: "GESTIÓN DE PROYECTOS",
-        title: "Planificación, costos y seguimiento de proyectos",
-        description:
-            "Orientación basada en la experiencia en proyectos técnicos: planificación de actividades, elaboración de presupuestos, seguimiento de trabajos y conceptos de gestión asociados al enfoque PMI/PMBOK.",
-        topics: [
-            "Planificación y seguimiento de trabajos",
-            "Costos y presupuestos",
-            "Fundamentos de gestión de proyectos",
-        ],
-        icon: ClipboardList,
-    },
-    {
-        number: "05",
-        category: "REDES Y SISTEMAS",
-        title: "Integración de sistemas y redes IP",
-        description:
-            "Explorar los fundamentos de conectividad e integración que intervienen en los sistemas electrónicos de seguridad y videovigilancia, relacionando los conceptos técnicos con sus aplicaciones profesionales.",
-        topics: [
-            "Redes IP aplicadas a videovigilancia",
-            "Integración de sistemas electrónicos",
-            "Criterios técnicos de implementación",
-        ],
-        icon: Network,
-    },
-];
+const specialtyIcons = {
+    "seguridad-electronica": ShieldCheck,
+    "proteccion-incendios": Flame,
+    "gestion-proyectos": BriefcaseBusiness,
+    "gestion-mantenimiento": Settings2,
+    "redes-sistemas": Network,
+};
 
 export default function Experience() {
     return (
@@ -90,35 +30,38 @@ export default function Experience() {
                 <div className="experience-intro">
                     <div className="section-heading experience-heading">
                         <span className="section-kicker experience-kicker">
-                            <span className="experience-kicker-dot" />
-                            03 / EXPERIENCIA APLICADA
+                            <span
+                                className="experience-kicker-dot"
+                                aria-hidden="true"
+                            />
+                            03 / TRAYECTORIA PROFESIONAL
                         </span>
 
                         <h2 id="experience-title">
-                            Conocimientos técnicos que{" "}
+                            Experiencia técnica y{" "}
                             <span className="text-accent">
-                                puedo compartir contigo.
+                                gestión especializada.
                             </span>
                         </h2>
 
                         <p>
-                            A partir de más de 25 años de experiencia en
-                            ingeniería electrónica, seguridad, mantenimiento
-                            y proyectos, ofrezco orientación virtual
-                            para estudiantes universitarios que buscan
-                            comprender mejor los conceptos y su aplicación
-                            en entornos profesionales.
+                            Mi trayectoria en ingeniería electrónica
+                            comprende diferentes ámbitos técnicos y
+                            operativos, desde los sistemas de seguridad
+                            y protección contra incendios hasta la
+                            gestión de mantenimiento y proyectos.
                         </p>
                     </div>
 
                     <aside
                         className="experience-highlight"
-                        aria-label="Experiencia profesional de Emilio Chávarri"
+                        aria-label="Resumen de experiencia profesional"
                     >
                         <div className="experience-highlight-icon">
                             <BriefcaseBusiness
                                 size={24}
                                 strokeWidth={1.7}
+                                aria-hidden="true"
                             />
                         </div>
 
@@ -130,7 +73,7 @@ export default function Experience() {
                             <strong>+25 años</strong>
 
                             <span className="experience-highlight-caption">
-                                aplicados a la ingeniería y la gestión técnica
+                                En ingeniería electrónica y gestión técnica
                             </span>
                         </div>
                     </aside>
@@ -139,28 +82,31 @@ export default function Experience() {
                 <div className="experience-timeline-heading">
                     <div>
                         <span className="experience-overline">
-                            ÁREAS DE CONOCIMIENTO
+                            ÁREAS DE ESPECIALIZACIÓN
                         </span>
 
-                        <h3>¿En qué puedo orientarte?</h3>
+                        <h3>Principales ámbitos de experiencia</h3>
                     </div>
 
                     <span className="experience-count">
                         <span>
-                            {String(orientationAreas.length).padStart(2, "0")}
+                            {String(specialties.length).padStart(2, "0")}
                         </span>
-                        áreas de orientación
+                        áreas profesionales
                     </span>
                 </div>
 
                 <div className="timeline">
-                    {orientationAreas.map((area, index) => {
-                        const Icon = area.icon;
+                    {specialties.map((area, index) => {
+                        const Icon =
+                            specialtyIcons[
+                            area.id as keyof typeof specialtyIcons
+                            ] ?? BriefcaseBusiness;
 
                         return (
                             <article
                                 className="timeline-item"
-                                key={area.number}
+                                key={area.id}
                                 style={{
                                     animationDelay: `${Math.min(
                                         index * 100,
@@ -180,8 +126,11 @@ export default function Experience() {
                                 <div className="timeline-content">
                                     <div className="timeline-meta">
                                         <span className="timeline-period">
-                                            <span className="timeline-period-dot" />
-                                            {area.category}
+                                            <span
+                                                className="timeline-period-dot"
+                                                aria-hidden="true"
+                                            />
+                                            {area.title.toUpperCase()}
                                         </span>
 
                                         <span className="timeline-index">
@@ -194,6 +143,7 @@ export default function Experience() {
                                             <Icon
                                                 size={23}
                                                 strokeWidth={1.7}
+                                                aria-hidden="true"
                                             />
                                         </div>
 
@@ -204,15 +154,16 @@ export default function Experience() {
 
                                     <div className="experience-topics">
                                         <span className="experience-topics-label">
-                                            TEMAS QUE PUEDES EXPLORAR
+                                            ÁMBITOS RELACIONADOS
                                         </span>
 
                                         <ul>
-                                            {area.topics.map((topic) => (
+                                            {area.tags.map((topic) => (
                                                 <li key={topic}>
                                                     <CheckCircle2
                                                         size={15}
                                                         strokeWidth={1.8}
+                                                        aria-hidden="true"
                                                     />
                                                     <span>{topic}</span>
                                                 </li>
@@ -225,8 +176,9 @@ export default function Experience() {
                                             <CheckCircle2
                                                 size={16}
                                                 strokeWidth={1.8}
+                                                aria-hidden="true"
                                             />
-                                            Orientación basada en experiencia profesional
+                                            Área de experiencia profesional
                                         </span>
 
                                         <span className="timeline-card-number">

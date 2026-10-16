@@ -1,6 +1,5 @@
-
 import {
-    BookOpen,
+    BriefcaseBusiness,
     GraduationCap,
     ShieldCheck,
     Wrench,
@@ -14,10 +13,10 @@ const strengths = [
     {
         icon: ShieldCheck,
         number: "01",
-        category: "SISTEMAS TÉCNICOS",
-        title: "Seguridad y protección",
+        category: "SISTEMAS DE SEGURIDAD",
+        title: "Seguridad electrónica y protección contra incendios",
         description:
-            "Conocimientos sobre seguridad electrónica y protección contra incendios, con atención a sus fundamentos técnicos y aplicaciones.",
+            "Área de especialización relacionada con los sistemas de seguridad electrónica y las soluciones de protección contra incendios.",
         topics: [
             "Seguridad electrónica",
             "Protección contra incendios",
@@ -26,25 +25,25 @@ const strengths = [
     {
         icon: Wrench,
         number: "02",
-        category: "OPERACIÓN Y CONTINUIDAD",
-        title: "Mantenimiento y servicios",
+        category: "MANTENIMIENTO TÉCNICO",
+        title: "Gestión de mantenimiento y servicios",
         description:
-            "Experiencia vinculada con el mantenimiento, la supervisión de servicios técnicos y la coordinación de actividades operativas.",
+            "Experiencia vinculada con la gestión del mantenimiento, la supervisión de servicios técnicos y la continuidad operativa.",
         topics: [
             "Gestión de mantenimiento",
-            "Supervisión técnica",
+            "Supervisión de servicios",
         ],
     },
     {
         icon: Workflow,
         number: "03",
         category: "PLANIFICACIÓN Y GESTIÓN",
-        title: "Proyectos y operaciones",
+        title: "Gestión de proyectos",
         description:
-            "Una perspectiva profesional sobre planificación de trabajos, presupuestos, seguimiento de actividades y gestión de servicios.",
+            "Ámbito profesional relacionado con la planificación, coordinación y seguimiento de proyectos y actividades técnicas.",
         topics: [
             "Gestión de proyectos",
-            "Presupuestos y seguimiento",
+            "Planificación y seguimiento",
         ],
     },
 ];
@@ -57,7 +56,6 @@ export default function About() {
             aria-labelledby="about-title"
         >
             <div className="section-shell about-shell">
-                {/* Presentación */}
                 <div className="about-intro">
                     <header className="about-heading">
                         <span className="section-kicker about-kicker">
@@ -65,47 +63,48 @@ export default function About() {
                                 className="about-kicker-line"
                                 aria-hidden="true"
                             />
-                            01 / SOBRE MÍ
+                            01 / PERFIL PROFESIONAL
                         </span>
 
                         <h2 id="about-title">
-                            La experiencia profesional también se{" "}
+                            Experiencia técnica y gestión en{" "}
                             <span className="text-accent">
-                                comparte.
+                                ingeniería electrónica.
                             </span>
                         </h2>
 
                         <p className="about-lead">
-                            Quiero compartir lo aprendido a lo largo de mi
-                            trayectoria y ayudar a estudiantes universitarios
-                            a conectar sus conocimientos académicos con la
-                            realidad profesional.
+                            Profesional de Ingeniería Electrónica con
+                            trayectoria en áreas técnicas vinculadas con
+                            la seguridad electrónica, la protección contra
+                            incendios, el mantenimiento y la gestión de
+                            proyectos.
                         </p>
                     </header>
 
                     <div className="about-story">
                         <span className="about-story-label">
-                            MI FORMA DE COMPARTIR CONOCIMIENTOS
+                            RESUMEN PROFESIONAL
                         </span>
 
                         <p className="about-story-highlight">
-                            Comprender un concepto es el primer paso.
-                            Conocer cómo se aplica en la práctica permite
-                            ampliar la perspectiva.
+                            Ingeniería, especialización técnica y gestión
+                            orientadas al desarrollo de soluciones y servicios.
                         </p>
 
                         <p className="body-copy">
-                            Mi trayectoria está relacionada con la ingeniería
-                            electrónica, los sistemas de seguridad, la
-                            protección contra incendios, el mantenimiento
-                            y la gestión de servicios técnicos.
+                            Mi perfil profesional reúne experiencia en sistemas
+                            de seguridad, soluciones de protección contra
+                            incendios, gestión de mantenimiento y coordinación
+                            de actividades técnicas.
                         </p>
 
                         <p className="body-copy">
-                            Desde esa experiencia, busco ofrecer orientación
-                            virtual a estudiantes que quieran aclarar dudas,
-                            profundizar en temas de su formación y comprender
-                            mejor su relación con el entorno profesional.
+                            Estas áreas representan los principales ámbitos
+                            de mi trayectoria y especialización profesional.
+                            En las siguientes secciones se presenta el
+                            detalle de mis áreas de experiencia y formación
+                            académica.
                         </p>
 
                         <div className="about-promise">
@@ -113,38 +112,37 @@ export default function About() {
                                 className="about-promise-icon"
                                 aria-hidden="true"
                             >
-                                <BookOpen size={20} />
+                                <BriefcaseBusiness size={20} />
                             </div>
 
                             <div className="about-promise-copy">
                                 <strong>
-                                    Orientación desde la experiencia
+                                    Enfoque profesional
                                 </strong>
                                 <p>
-                                    Un espacio para conversar sobre conceptos
-                                    técnicos, aplicaciones y dudas relacionadas
-                                    con tu aprendizaje.
+                                    Especialización técnica, mantenimiento
+                                    y gestión de proyectos en el ámbito
+                                    de la ingeniería electrónica.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Áreas de experiencia */}
                 <div className="about-offer-heading">
                     <div>
                         <span className="about-section-eyebrow">
-                            CONOCIMIENTOS Y EXPERIENCIA
+                            ÁREAS DE ESPECIALIZACIÓN
                         </span>
 
                         <h3>
-                            Áreas en las que puedo compartir mi experiencia
+                            Principales ámbitos de experiencia
                         </h3>
                     </div>
 
                     <p>
-                        Tres ámbitos profesionales que conectan la ingeniería
-                        con la operación y la gestión técnica.
+                        Áreas técnicas y de gestión que forman parte
+                        de mi perfil profesional.
                     </p>
                 </div>
 
@@ -187,18 +185,12 @@ export default function About() {
                                 <div className="about-strength-divider" />
 
                                 <span className="about-topics-label">
-                                    TEMAS RELACIONADOS
+                                    ÁREAS RELACIONADAS
                                 </span>
 
                                 <ul className="about-strength-topics">
                                     {item.topics.map((topic) => (
-                                        <li key={topic}>
-                                            <span
-                                                className="about-topic-dot"
-                                                aria-hidden="true"
-                                            />
-                                            {topic}
-                                        </li>
+                                        <li key={topic}>{topic}</li>
                                     ))}
                                 </ul>
                             </article>
@@ -206,17 +198,20 @@ export default function About() {
                     })}
                 </div>
 
-                {/* Formación académica */}
                 <div className="about-education-section">
                     <div className="about-education-heading">
                         <span className="about-section-eyebrow">
-                            FORMACIÓN
+                            FORMACIÓN ACADÉMICA
                         </span>
-                        <h3>Mi base académica</h3>
+
+                        <h3>Estudios profesionales</h3>
                     </div>
 
                     <div className="education-card">
-                        <div className="education-icon">
+                        <div
+                            className="education-icon"
+                            aria-hidden="true"
+                        >
                             <GraduationCap
                                 size={26}
                                 strokeWidth={1.7}

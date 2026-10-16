@@ -1,4 +1,3 @@
-
 export const profile = {
     name: "Emilio Chávarri Jiménez",
     title: "Bachiller en Ingeniería Electrónica",
@@ -15,32 +14,52 @@ export const specialties = [
         number: "01",
         title: "Seguridad electrónica",
         description:
-            "Sistemas CCTV, control de accesos, alarmas de intrusión y detección de incendios.",
-        tags: ["CCTV", "Control de accesos", "Alarmas"],
+            "Sistemas de videovigilancia CCTV, redes IP, control de accesos y alarmas de intrusión.",
+        tags: [
+            "CCTV",
+            "Redes IP",
+            "Control de accesos",
+            "Alarmas",
+        ],
     },
     {
         id: "proteccion-incendios",
         number: "02",
         title: "Protección contra incendios",
         description:
-            "Sistemas de extinción, redes de agua contra incendios y normativa técnica NFPA.",
-        tags: ["NFPA", "Redes de agua", "Extinción"],
+            "Sistemas de detección, alarma y extinción de incendios, redes de agua y normativa técnica NFPA.",
+        tags: [
+            "NFPA",
+            "Redes de agua",
+            "Sistemas de extinción",
+            "Detección y alarma",
+        ],
     },
     {
         id: "gestion-proyectos",
         number: "03",
         title: "Gestión de proyectos",
         description:
-            "Planificación, seguimiento de proyectos, evaluación de propuestas y control de costos.",
-        tags: ["PMI / PMBOK", "Presupuestos", "Costos"],
+            "Planificación de actividades, evaluación de propuestas técnico-económicas, presupuestos y seguimiento de proyectos.",
+        tags: [
+            "Planificación",
+            "Presupuestos",
+            "Costos",
+            "Seguimiento",
+        ],
     },
     {
         id: "gestion-mantenimiento",
         number: "04",
         title: "Gestión de mantenimiento",
         description:
-            "Mantenimiento preventivo y correctivo, supervisión de servicios y mejora de procesos.",
-        tags: ["Planificación", "Operaciones", "Procesos"],
+            "Organización del mantenimiento preventivo y correctivo, supervisión de servicios y seguimiento de actividades técnicas.",
+        tags: [
+            "Mantenimiento preventivo",
+            "Mantenimiento correctivo",
+            "Supervisión",
+            "Operaciones",
+        ],
     },
 ];
 
@@ -49,18 +68,18 @@ export const achievements = [
         category: "Seguridad electrónica",
         title: "Gestión de sistemas de seguridad",
         description:
-            "Gestión del mantenimiento de sistemas de seguridad, evaluación de proveedores y supervisión de servicios.",
+            "Gestión del mantenimiento de sistemas de seguridad, evaluación de proveedores y supervisión de servicios técnicos.",
     },
     {
         category: "Protección contra incendios",
         title: "Gestión técnica y operativa",
         description:
-            "Gestión de mantenimiento, presupuestos y proyectos de protección contra incendios.",
+            "Gestión de mantenimiento, presupuestos y proyectos relacionados con sistemas de protección contra incendios.",
     },
     {
         category: "Desarrollo de software",
-        title: "Herramientas para la gestión",
+        title: "Herramientas para la gestión técnica",
         description:
-            "Diseño de software para controlar mantenimientos de equipos electrónicos de seguridad y realizar seguimiento de obras.",
+            "Diseño de software para el control del mantenimiento de equipos electrónicos de seguridad y el seguimiento de obras.",
     },
 ];
